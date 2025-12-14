@@ -70,7 +70,7 @@ const projects = [
             { name: "REST API", icon: <Server className="w-4 h-4 text-emerald-400" /> },
             { name: "Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> }
         ],
-        links: { github: "https://github.com/chandangupta7143", demo: "#" },
+        links: { github: "#", demo: "#" },
         image: "/project_smartbank.png",
         color: "from-indigo-900 to-blue-900"
     },
@@ -85,7 +85,7 @@ const projects = [
             { name: "Tailwind v4", icon: Icons.Tailwind },
             { name: "Vite", icon: Icons.Vite }
         ],
-        links: { github: "https://github.com/chandangupta7143/portfolio", demo: "https://chandangupta7143.github.io/PORTFOLIO/" },
+        links: { github: "https://github.com/chandangupta7143/Chandan-Portfolio", demo: "https://chandan-portfolio-theta.vercel.app/" },
         image: "/project_portfolio.png",
         color: "from-purple-900 to-fuchsia-900"
     }
@@ -127,9 +127,11 @@ const ProjectCard = ({ project, index }) => {
                         <div className="flex flex-wrap gap-4 mt-8">
                             {project.links.demo && (
                                 <a
-                                    href="#"
-                                    onClick={(e) => e.preventDefault()}
-                                    className="group/btn relative p-[1px] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-10px_rgba(99,102,241,0.3)] cursor-default"
+                                    href={project.links.demo}
+                                    target={project.links.demo === '#' ? '' : "_blank"}
+                                    rel={project.links.demo === '#' ? '' : "noopener noreferrer"}
+                                    onClick={(e) => project.links.demo === '#' && e.preventDefault()}
+                                    className={`group/btn relative p-[1px] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-10px_rgba(99,102,241,0.3)] ${project.links.demo === '#' ? 'cursor-default opacity-50 hover:scale-100 hover:shadow-none' : ''}`}
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-600 to-zinc-800 group-hover/btn:from-indigo-500 group-hover/btn:via-purple-500 group-hover/btn:to-pink-500 transition-all duration-500 opacity-70 group-hover/btn:opacity-100" />
                                     <div className="relative h-full w-full px-8 py-4 bg-zinc-950 rounded-full flex items-center justify-center transition-colors duration-300 group-hover/btn:bg-zinc-900">
@@ -141,9 +143,11 @@ const ProjectCard = ({ project, index }) => {
                                 </a>
                             )}
                             <a
-                                href="#"
-                                onClick={(e) => e.preventDefault()}
-                                className="group/btn relative p-[1px] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-10px_rgba(99,102,241,0.3)] cursor-default"
+                                href={project.links.github}
+                                target={project.links.github === '#' ? '' : "_blank"}
+                                rel={project.links.github === '#' ? '' : "noopener noreferrer"}
+                                onClick={(e) => project.links.github === '#' && e.preventDefault()}
+                                className={`group/btn relative p-[1px] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-10px_rgba(99,102,241,0.3)] ${project.links.github === '#' ? 'cursor-default opacity-50 hover:scale-100 hover:shadow-none' : ''}`}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-600 to-zinc-800 group-hover/btn:from-indigo-500 group-hover/btn:via-purple-500 group-hover/btn:to-pink-500 transition-all duration-500 opacity-70 group-hover/btn:opacity-100" />
                                 <div className="relative h-full w-full px-8 py-4 bg-zinc-950 rounded-full flex items-center justify-center transition-colors duration-300 group-hover/btn:bg-zinc-900">
