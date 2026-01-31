@@ -81,7 +81,7 @@ const Contact = () => {
                                     type="text"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
-                                    placeholder={status === 'success' ? "Message Transmitted." : "Enter Your Details..."}
+                                    placeholder={status === 'success' ? "Message Transmitted." : "Message Me.."}
                                     disabled={status === 'sending' || status === 'success'}
                                     className="w-full bg-transparent px-4 py-4 md:py-6 text-zinc-100 placeholder-zinc-600 outline-none text-lg md:text-xl font-mono disabled:opacity-50 text-left flex-1 min-w-0 tracking-tight"
                                 />
