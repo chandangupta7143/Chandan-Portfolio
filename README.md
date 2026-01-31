@@ -1,4 +1,4 @@
-# 🚀 Chandan Gupta – Developer Portfolio
+#  Chandan Gupta – Developer Portfolio
 
 This is my personal portfolio website built using **React + Vite**, designed to showcase my skills, projects, and journey as a **Java Full Stack Developer**.
 
@@ -6,7 +6,7 @@ The portfolio focuses on clean UI, smooth animations, and modern frontend practi
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - ⚛️ React.js  
 - ⚡ Vite  
@@ -17,7 +17,7 @@ The portfolio focuses on clean UI, smooth animations, and modern frontend practi
 
 ---
 
-## ✨ Features
+##  Features
 
 - Modern & minimal UI  
 - Smooth animations using Framer Motion  
