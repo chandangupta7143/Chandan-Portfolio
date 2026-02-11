@@ -58,6 +58,23 @@ const Icons = {
 
 const projects = [
     {
+        title: "EcoQuest",
+        category: "Gamified EdTech",
+        description: "Engineered an interactive environmental learning platform with role-based access. Features verifiable eco-challenges, contribution scoring leaderboards, and a robust teacher verification workflow.",
+        tech: [
+            { name: "React", icon: Icons.React },
+            { name: "Java", icon: Icons.Java },
+            { name: "Spring Boot", icon: Icons.Spring },
+            { name: "MySQL", icon: Icons.MySQL },
+            { name: "Tailwind", icon: Icons.Tailwind },
+            { name: "JWT", icon: <Lock className="w-4 h-4 text-amber-400" /> },
+            { name: "Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> }
+        ],
+        links: { github: "https://github.com/chandangupta7143/Ecoquest", demo: "#" },
+        image: "/Ecoquest.png",
+        color: "from-emerald-900 to-teal-900"
+    },
+    {
         title: "SmartBank Hub",
         category: "Fintech Platform",
         description: "Architected a high-performance banking portal using React and Spring Boot. Features secure user onboarding, real-time dashboards, transaction agent simulators, and QR code integration.",
@@ -70,8 +87,8 @@ const projects = [
             { name: "REST API", icon: <Server className="w-4 h-4 text-emerald-400" /> },
             { name: "Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> }
         ],
-        links: { github: "#", demo: "#" },
-        image: "/project_smartbank.png",
+        links: { github: "https://github.com/chandangupta7143/SmartBank-Hub", demo: "#" },
+        image: "/SmartBAnkhHUb.png",
         color: "from-indigo-900 to-blue-900"
     },
     {
