@@ -35,25 +35,21 @@ const IntroOverlay = ({ onComplete }) => {
                 >
                     {/* Left Curtain Panel */}
                     <motion.div
-                        className="absolute top-0 left-0 w-1/2 h-full bg-zinc-950"
+                        className="absolute top-0 left-0 h-full bg-zinc-950"
+                        style={{ width: 'calc(50% + 1px)', willChange: 'transform' }}
                         initial={{ x: 0 }}
                         animate={phase === 'reveal' ? { x: '-100%' } : { x: 0 }}
                         transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-                    >
-                        {/* Gradient edge glow */}
-                        <div className="absolute right-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-indigo-500/50 to-transparent" />
-                    </motion.div>
+                    />
 
                     {/* Right Curtain Panel */}
                     <motion.div
-                        className="absolute top-0 right-0 w-1/2 h-full bg-zinc-950"
+                        className="absolute top-0 right-0 h-full bg-zinc-950"
+                        style={{ width: 'calc(50% + 1px)', willChange: 'transform' }}
                         initial={{ x: 0 }}
                         animate={phase === 'reveal' ? { x: '100%' } : { x: 0 }}
                         transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-                    >
-                        {/* Gradient edge glow */}
-                        <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-indigo-500/50 to-transparent" />
-                    </motion.div>
+                    />
 
                     {/* Centered Content */}
                     <motion.div

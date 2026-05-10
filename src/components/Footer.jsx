@@ -29,7 +29,7 @@ const Footer = () => {
 
                             {/* Glass Core */}
                             <div className="relative flex items-center justify-center w-8 h-8 bg-zinc-950 rounded-full border border-white/10 shadow-[inner_0_0_10px_rgba(255,255,255,0.1)] group-hover:scale-90 transition-transform duration-500">
-                                <span className="font-bold text-[10px] text-white tracking-tighter">CG<span className="text-indigo-500 animate-pulse">.</span></span>
+                                <span className="font-bold text-[10px] text-white tracking-tighter">CG</span>
                             </div>
                         </div>
 

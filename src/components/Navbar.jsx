@@ -64,7 +64,7 @@ const Navbar = () => {
 
                                 {/* Glass Core */}
                                 <div className="relative flex items-center justify-center w-7 h-7 md:w-8 md:h-8 bg-zinc-950 rounded-full border border-white/10 shadow-[inner_0_0_10px_rgba(255,255,255,0.1)] group-hover:scale-90 transition-transform duration-500">
-                                    <span className="font-bold text-[8px] md:text-[10px] text-white tracking-tighter">CG<span className="text-indigo-500 animate-pulse">.</span></span>
+                                    <span className="font-bold text-[8px] md:text-[10px] text-white tracking-tighter">CG</span>
                                 </div>
                             </div>
 

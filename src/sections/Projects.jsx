@@ -1,7 +1,7 @@
 import React from 'react';
 import { Reveal } from '../components/Reveal';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ShieldCheck, Server, Zap, Globe, Code2, Database, Lock } from 'lucide-react';
+import { ShieldCheck, Server, Zap, Globe, Code2, Database, Lock, Brain, Sparkles, Layers, Package, Network, BarChart2, QrCode, Users, GitBranch } from 'lucide-react';
 
 // Icons
 const Icons = {
@@ -63,16 +63,48 @@ const projects = [
         description: "Engineered an interactive environmental learning platform with role-based access. Features verifiable eco-challenges, contribution scoring leaderboards, and a robust teacher verification workflow.",
         tech: [
             { name: "React", icon: Icons.React },
+            { name: "Tailwind", icon: Icons.Tailwind },
             { name: "Java", icon: Icons.Java },
             { name: "Spring Boot", icon: Icons.Spring },
+            { name: "Spring MVC", icon: <Layers className="w-4 h-4 text-[#6DB33F]" /> },
+            { name: "Spring Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> },
+            { name: "Hibernate/JPA", icon: <Database className="w-4 h-4 text-orange-400" /> },
+            { name: "REST API", icon: <Server className="w-4 h-4 text-emerald-400" /> },
             { name: "MySQL", icon: Icons.MySQL },
-            { name: "Tailwind", icon: Icons.Tailwind },
             { name: "JWT", icon: <Lock className="w-4 h-4 text-amber-400" /> },
-            { name: "Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> }
+            { name: "Role-Based Access", icon: <Users className="w-4 h-4 text-cyan-400" /> },
+            { name: "Maven", icon: <Package className="w-4 h-4 text-red-400" /> },
+            { name: "Axios", icon: <Network className="w-4 h-4 text-indigo-400" /> }
         ],
         links: { github: "https://github.com/chandangupta7143/ECOQUEST", demo: "https://ecoquest-pearl.vercel.app/" },
         image: "/Ecoquest.png",
         color: "from-emerald-900 to-teal-900"
+    },
+    {
+        title: "Expense Tracker",
+        category: "Fintech Platform",
+        description: "A full-stack AI-powered expense management platform that auto-categorizes spending, generates smart financial insights, and visualizes real-time analytics through interactive dashboards — helping users predict budgets and build smarter financial habits.",
+        tech: [
+            { name: "React", icon: Icons.React },
+            { name: "Tailwind", icon: Icons.Tailwind },
+            { name: "JavaScript", icon: Icons.JavaScript },
+            { name: "Axios", icon: <Network className="w-4 h-4 text-indigo-400" /> },
+            { name: "Java", icon: Icons.Java },
+            { name: "Spring Boot", icon: Icons.Spring },
+            { name: "Spring MVC", icon: <Layers className="w-4 h-4 text-[#6DB33F]" /> },
+            { name: "Spring Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> },
+            { name: "Hibernate/JPA", icon: <Database className="w-4 h-4 text-orange-400" /> },
+            { name: "REST API", icon: <Server className="w-4 h-4 text-emerald-400" /> },
+            { name: "MySQL", icon: Icons.MySQL },
+            { name: "JWT", icon: <Lock className="w-4 h-4 text-amber-400" /> },
+            { name: "Maven", icon: <Package className="w-4 h-4 text-red-400" /> },
+            { name: "AI Insights", icon: <Brain className="w-4 h-4 text-violet-400" /> },
+            { name: "Analytics", icon: <BarChart2 className="w-4 h-4 text-purple-400" /> }
+        ],
+        links: { github: "#", demo: "#" },
+        image: "/ai-expense-tracker.png",
+        color: "from-violet-900 to-purple-900",
+        comingSoon: true
     },
     {
         title: "SmartBank Hub",
@@ -81,11 +113,18 @@ const projects = [
         tech: [
             { name: "React", icon: Icons.React },
             { name: "Tailwind", icon: Icons.Tailwind },
+            { name: "Axios", icon: <Network className="w-4 h-4 text-indigo-400" /> },
             { name: "Java", icon: Icons.Java },
             { name: "Spring Boot", icon: Icons.Spring },
-            { name: "MySQL", icon: Icons.MySQL },
+            { name: "Spring MVC", icon: <Layers className="w-4 h-4 text-[#6DB33F]" /> },
+            { name: "Spring Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> },
+            { name: "Hibernate/JPA", icon: <Database className="w-4 h-4 text-orange-400" /> },
             { name: "REST API", icon: <Server className="w-4 h-4 text-emerald-400" /> },
-            { name: "Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> }
+            { name: "MySQL", icon: Icons.MySQL },
+            { name: "JWT", icon: <Lock className="w-4 h-4 text-amber-400" /> },
+            { name: "Maven", icon: <Package className="w-4 h-4 text-red-400" /> },
+            { name: "QR Integration", icon: <QrCode className="w-4 h-4 text-cyan-400" /> },
+            { name: "MVC Pattern", icon: <GitBranch className="w-4 h-4 text-zinc-400" /> }
         ],
         links: { github: "https://github.com/chandangupta7143/SmartBank-Hub", demo: "#" },
         image: "/SmartBAnkhHUb.png",
@@ -123,6 +162,18 @@ const ProjectCard = ({ project, index }) => {
                     {/* Content */}
                     <div className="order-1 lg:order-1">
 
+
+                        <div className="flex items-center gap-3 mb-5">
+                            <span className="text-xs font-mono tracking-widest uppercase text-zinc-500 border border-zinc-800 px-3 py-1 rounded-full">
+                                {project.category}
+                            </span>
+                            {project.comingSoon && (
+                                <span className="flex items-center gap-1.5 text-xs font-mono tracking-widest uppercase text-violet-400 border border-violet-500/30 bg-violet-500/10 px-3 py-1 rounded-full animate-pulse">
+                                    <Sparkles className="w-3 h-3" />
+                                    Coming Soon
+                                </span>
+                            )}
+                        </div>
 
                         <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold text-zinc-100 mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-500">
                             {project.title}
@@ -181,18 +232,37 @@ const ProjectCard = ({ project, index }) => {
                     <div className="order-2 lg:order-2 relative aspect-video rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 group-hover:border-indigo-500/30 transition-all duration-500 group-hover:shadow-2xl hover:scale-[1.02]">
                         <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10 group-hover:opacity-20 transition-opacity duration-700`}></div>
 
-                        {/* Actual Screenshot Image (or Placeholder Logic) */}
-                        <img
-                            src={project.image}
-                            alt={`${project.title} Interface`}
-                            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
-                            onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.style.display = 'none'; // Fallback if image missing
-                                e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
-                                e.target.parentElement.innerHTML += `<div class="text-zinc-600 font-mono text-sm">Coming Soon....</div>`;
-                            }}
-                        />
+                        {project.comingSoon ? (
+                            /* Coming Soon Placeholder */
+                            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-violet-950/40 via-zinc-900/60 to-purple-950/40">
+                                <div className="relative">
+                                    <div className="absolute inset-0 bg-violet-500/20 rounded-full blur-xl animate-pulse" />
+                                    <Brain className="relative w-12 h-12 text-violet-400 opacity-80" />
+                                </div>
+                                <div className="text-center">
+                                    <p className="text-zinc-300 font-semibold text-sm tracking-widest uppercase">Demo &amp; Screenshots</p>
+                                    <p className="text-violet-400/80 font-mono text-xs tracking-wider mt-1">Coming Soon</p>
+                                </div>
+                                <div className="flex gap-1.5">
+                                    {[0, 1, 2].map(i => (
+                                        <span key={i} className="w-1.5 h-1.5 rounded-full bg-violet-500/60 animate-bounce" style={{ animationDelay: `${i * 0.15}s` }} />
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            /* Actual Screenshot Image */
+                            <img
+                                src={project.image}
+                                alt={`${project.title} Interface`}
+                                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.style.display = 'none';
+                                    e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
+                                    e.target.parentElement.innerHTML += `<div class="text-zinc-600 font-mono text-sm">Coming Soon....</div>`;
+                                }}
+                            />
+                        )}
 
                         {/* Overlay Gradient for consistency */}
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60"></div>
