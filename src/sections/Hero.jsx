@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Reveal } from "../components/Reveal";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 500], [0, 50]);
 
     return (
         <section className="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden pt-24 pb-12">
@@ -12,12 +10,12 @@ const Hero = () => {
             <motion.div
                 animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3], rotate: [0, 90, 0] }}
                 transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 mix-blend-screen"
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] -z-10"
             />
             <motion.div
                 animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0.4, 0.2], rotate: [0, -45, 0] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] -z-10 mix-blend-screen"
+                className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] -z-10"
             />
 
             <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -54,7 +52,7 @@ const Hero = () => {
                     <Reveal delay={0.3}>
                         <div className="flex flex-wrap gap-4">
                             <a
-                                href="https://drive.google.com/file/d/1NwtQzf7LZqmtCx7zVcPVtpzXJdFJfw-Y/view?usp=sharing"
+                                href="https://drive.google.com/file/d/13629udTbbktMEr8tqrE3Aej3tDGAe2x5/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group relative px-8 py-4 flex items-center gap-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-xl transition-all duration-500 hover:bg-white/10 hover:border-indigo-500/30 shadow-[0_0_20px_rgba(99,102,241,0.1)] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] overflow-hidden"

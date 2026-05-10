@@ -2,72 +2,95 @@ import React from 'react';
 import { Reveal } from '../components/Reveal';
 import { motion } from 'framer-motion';
 import {
-    Code2,
-    Coffee,
-    Database,
-    Atom,
-    Wind,
-    Layers,
-    GitBranch,
-    Terminal,
-    Figma,
-    Github,
-    Cpu,
-    Binary,
-    Braces,
-    Leaf,
-    Globe, // For REST APIs
-    Table, // For Hibernate/JPA
-    ShieldCheck, // For Security
-    Webhook, // For Postman
-    Network, // For Data Structures
-    Workflow, // For Algorithms
-    Activity // For Complexity
+    Code2, Coffee, Database, Atom, Wind, Layers, GitBranch, Terminal,
+    Github, Cpu, Braces, Leaf, Globe, Table, ShieldCheck,
+    Webhook, Workflow, Activity, FileJson, Server, Layout, 
+    MonitorSmartphone, MousePointerClick, Zap, Box, Blocks, Key, 
+    Lock, Package, Cloud, HardDrive, LayoutDashboard, Binary, Network, Brain, Puzzle
 } from 'lucide-react';
 
 const skillsData = [
     {
-        category: "Backend & Architecture",
-        description: "Designing scalable, fault-tolerant systems with clean architecture and secure data patterns.",
+        category: "Programming Languages",
+        description: "Core languages for building robust and scalable applications.",
         items: [
             { name: "Java", icon: <Coffee strokeWidth={1.5} />, color: "#F89820", core: true },
-            { name: "Spring Boot", icon: <Leaf strokeWidth={1.5} />, color: "#6DB33F", core: true },
-            { name: "REST APIs", icon: <Globe strokeWidth={1.5} />, color: "#563d7c", core: false }, // Using generic color/icon
-            { name: "SQL", icon: <Database strokeWidth={1.5} />, color: "#336791", core: false },
-            { name: "Security", icon: <ShieldCheck strokeWidth={1.5} />, color: "#4B5563", core: false }
+            { name: "C++", icon: <Code2 strokeWidth={1.5} />, color: "#00599C", core: true },
+            { name: "JavaScript", icon: <Braces strokeWidth={1.5} />, color: "#F7DF1E" },
+            { name: "SQL", icon: <Database strokeWidth={1.5} />, color: "#336791" }
         ]
     },
     {
-        category: "Frontend & Design",
+        category: "Data Structures & Algorithms",
+        description: "Mastery in computational complexity, optimization, and algorithmic problem solving.",
+        items: [
+            { name: "Data Structures", icon: <Network strokeWidth={1.5} />, color: "#8B5CF6", core: true },
+            { name: "Algorithms", icon: <Workflow strokeWidth={1.5} />, color: "#10B981", core: true },
+            { name: "Problem Solving", icon: <Brain strokeWidth={1.5} />, color: "#F59E0B" },
+            { name: "Complexity", icon: <Activity strokeWidth={1.5} />, color: "#EF4444" },
+            { name: "Optimization", icon: <Zap strokeWidth={1.5} />, color: "#0ea5e9" }
+        ]
+    },
+    {
+        category: "Frontend",
         description: "Engineering responsive, pixel-perfect interfaces with modern reactive state management.",
         items: [
             { name: "React.js", icon: <Atom strokeWidth={1.5} />, color: "#61DAFB", core: true },
-            { name: "JavaScript", icon: <Braces strokeWidth={1.5} />, color: "#F7DF1E", core: true },
-            { name: "Tailwind", icon: <Wind strokeWidth={1.5} />, color: "#38B2AC" },
-            { name: "Motion", icon: <Layers strokeWidth={1.5} />, color: "#E902B5" },
-            { name: "Figma", icon: <Figma strokeWidth={1.5} />, color: "#F24E1E" }
+            { name: "Tailwind CSS", icon: <Wind strokeWidth={1.5} />, color: "#38B2AC" },
+            { name: "Framer Motion", icon: <Layers strokeWidth={1.5} />, color: "#E902B5" },
+            { name: "Responsive Web", icon: <MonitorSmartphone strokeWidth={1.5} />, color: "#4B5563" },
+            { name: "DOM Manipulation", icon: <FileJson strokeWidth={1.5} />, color: "#F7DF1E" },
+            { name: "Event Handling", icon: <MousePointerClick strokeWidth={1.5} />, color: "#A855F7" },
+            { name: "Modern UI", icon: <Layout strokeWidth={1.5} />, color: "#EC4899" }
         ]
     },
     {
-        category: "Algorithmic & Core",
-        description: "Optimizing computational complexity and system performance through deep understanding.",
+        category: "Backend",
+        description: "Designing scalable, fault-tolerant systems with clean architecture and secure data patterns.",
         items: [
-            { name: "C++", icon: <Code2 strokeWidth={1.5} />, color: "#00599C", core: true },
-            { name: "DSA", icon: <Binary strokeWidth={1.5} />, color: "#ffffff", core: true },
-            { name: "Data Structures", icon: <Network strokeWidth={1.5} />, color: "#8B5CF6", core: false },
-            { name: "Algorithms", icon: <Workflow strokeWidth={1.5} />, color: "#10B981", core: false },
-            { name: "Complexity", icon: <Activity strokeWidth={1.5} />, color: "#EF4444", core: false }
+            { name: "Core Java", icon: <Coffee strokeWidth={1.5} />, color: "#F89820", core: true },
+            { name: "Advanced Java", icon: <Coffee strokeWidth={1.5} />, color: "#E76F00" },
+            { name: "OOPs", icon: <Blocks strokeWidth={1.5} />, color: "#3B82F6" },
+            { name: "Collections", icon: <Box strokeWidth={1.5} />, color: "#8B5CF6" },
+            { name: "Exception Handling", icon: <Zap strokeWidth={1.5} />, color: "#EF4444" },
+            { name: "Multithreading", icon: <Workflow strokeWidth={1.5} />, color: "#10B981" },
+            { name: "JDBC", icon: <Database strokeWidth={1.5} />, color: "#336791" },
+            { name: "Servlets", icon: <Server strokeWidth={1.5} />, color: "#0ea5e9" },
+            { name: "JSP", icon: <LayoutDashboard strokeWidth={1.5} />, color: "#d946ef" },
+            { name: "Spring", icon: <Leaf strokeWidth={1.5} />, color: "#6DB33F", core: true },
+            { name: "Spring Boot", icon: <Leaf strokeWidth={1.5} />, color: "#6DB33F", core: true },
+            { name: "REST APIs", icon: <Globe strokeWidth={1.5} />, color: "#563d7c" },
+            { name: "Hibernate / JPA", icon: <Table strokeWidth={1.5} />, color: "#59666C" },
+            { name: "Auth & Authz", icon: <Lock strokeWidth={1.5} />, color: "#F59E0B" },
+            { name: "Spring Security", icon: <ShieldCheck strokeWidth={1.5} />, color: "#6DB33F" },
+            { name: "JWT", icon: <Key strokeWidth={1.5} />, color: "#ec4899" },
+            { name: "API Security", icon: <ShieldCheck strokeWidth={1.5} />, color: "#4B5563" },
+            { name: "Backend Dev", icon: <Server strokeWidth={1.5} />, color: "#64748b" }
+        ]
+    },
+    {
+        category: "Database",
+        description: "Managing and optimizing data structures for high-performance applications.",
+        items: [
+            { name: "MySQL", icon: <Database strokeWidth={1.5} />, color: "#4479A1", core: true },
+            { name: "PostgreSQL", icon: <Database strokeWidth={1.5} />, color: "#336791" },
+            { name: "SQL Queries", icon: <Terminal strokeWidth={1.5} />, color: "#10B981" },
+            { name: "CRUD", icon: <Activity strokeWidth={1.5} />, color: "#14b8a6" },
+            { name: "RDBMS", icon: <Table strokeWidth={1.5} />, color: "#3b82f6" }
         ]
     },
     {
         category: "Tools & Platforms",
-        description: "Streamlining deployment pipelines and development workflows for maximum reliability.",
+        description: "Streamlining deployment pipelines and development workflows.",
         items: [
             { name: "Git", icon: <GitBranch strokeWidth={1.5} />, color: "#F05032" },
             { name: "GitHub", icon: <Github strokeWidth={1.5} />, color: "#ffffff" },
-            { name: "Linux", icon: <Terminal strokeWidth={1.5} />, color: "#FCC624" },
             { name: "VS Code", icon: <Cpu strokeWidth={1.5} />, color: "#007ACC" },
-            { name: "Postman", icon: <Webhook strokeWidth={1.5} />, color: "#FF6C37" }
+            { name: "Postman", icon: <Webhook strokeWidth={1.5} />, color: "#FF6C37" },
+            { name: "Maven", icon: <Package strokeWidth={1.5} />, color: "#C71A22" },
+            { name: "Render", icon: <Cloud strokeWidth={1.5} />, color: "#ffffff" },
+            { name: "Vercel", icon: <Cloud strokeWidth={1.5} />, color: "#ffffff" },
+            { name: "Netlify", icon: <Cloud strokeWidth={1.5} />, color: "#00C7B7" }
         ]
     }
 ];

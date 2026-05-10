@@ -70,7 +70,7 @@ const projects = [
             { name: "JWT", icon: <Lock className="w-4 h-4 text-amber-400" /> },
             { name: "Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> }
         ],
-        links: { github: "https://github.com/chandangupta7143/Ecoquest", demo: "#" },
+        links: { github: "https://github.com/chandangupta7143/ECOQUEST", demo: "https://ecoquest-pearl.vercel.app/" },
         image: "/Ecoquest.png",
         color: "from-emerald-900 to-teal-900"
     },
