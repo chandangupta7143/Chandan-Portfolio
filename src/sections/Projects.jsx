@@ -58,25 +58,40 @@ const Icons = {
 
 const projects = [
     {
-        title: "EcoQuest",
+        title: "EcoQuest - JAVA FULL STACK",
         category: "Gamified EdTech",
-        description: "Engineered an interactive environmental learning platform with role-based access. Features verifiable eco-challenges, contribution scoring leaderboards, and a robust teacher verification workflow.",
+        description: "EcoQuest is a gamified environmental education platform built for students and teachers. It empowers students to take real-world civic actions (planting trees, recycling, saving water) and rewards them with XP, leveling up their 'Eco-Warrior' status.",
         tech: [
-            { name: "React", icon: Icons.React },
-            { name: "Tailwind", icon: Icons.Tailwind },
-            { name: "Java", icon: Icons.Java },
+            { name: "React 18", icon: Icons.React },
+            { name: "Tailwind CSS", icon: Icons.Tailwind },
+            { name: "React Router", icon: <Globe className="w-4 h-4 text-blue-400" /> },
+            { name: "Lucide React", icon: <Zap className="w-4 h-4 text-pink-400" /> },
+            { name: "Axios", icon: <Network className="w-4 h-4 text-indigo-400" /> },
+            { name: "Java 17+", icon: Icons.Java },
             { name: "Spring Boot", icon: Icons.Spring },
-            { name: "Spring MVC", icon: <Layers className="w-4 h-4 text-[#6DB33F]" /> },
+            { name: "Spring Data JPA", icon: <Database className="w-4 h-4 text-orange-400" /> },
             { name: "Spring Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> },
-            { name: "Hibernate/JPA", icon: <Database className="w-4 h-4 text-orange-400" /> },
-            { name: "REST API", icon: <Server className="w-4 h-4 text-emerald-400" /> },
-            { name: "MySQL", icon: Icons.MySQL },
-            { name: "JWT", icon: <Lock className="w-4 h-4 text-amber-400" /> },
-            { name: "Role-Based Access", icon: <Users className="w-4 h-4 text-cyan-400" /> },
-            { name: "Maven", icon: <Package className="w-4 h-4 text-red-400" /> },
-            { name: "Axios", icon: <Network className="w-4 h-4 text-indigo-400" /> }
+            { name: "MySQL 8.0", icon: Icons.MySQL },
+            { name: "Maven", icon: <Package className="w-4 h-4 text-red-400" /> }
         ],
-        links: { github: "https://github.com/chandangupta7143/ECOQUEST", demo: "https://ecoquest-pearl.vercel.app/" },
+        links: { github: "https://github.com/chandangupta7143/ECOQUEST", demo: "https://ecoquest-jy5g.vercel.app/" },
+        image: "/ecoquest-java.png",
+        color: "from-emerald-900 to-teal-900"
+    },
+    {
+        title: "ECOQUEST - MERN",
+        category: "MERN Platform",
+        description: "A full-stack gamified environmental learning platform where students complete eco-challenges, participate in quizzes, earn XP points, climb leaderboards, and track their real-world environmental impact. Teachers can create challenges, manage quizzes, review submissions, monitor analytics, and track student progress.",
+        tech: [
+            { name: "MongoDB", icon: <Database className="w-4 h-4 text-green-500" /> },
+            { name: "Express.js", icon: <Server className="w-4 h-4 text-gray-400" /> },
+            { name: "React", icon: Icons.React },
+            { name: "Node.js", icon: <Layers className="w-4 h-4 text-green-400" /> },
+            { name: "Vite", icon: Icons.Vite },
+            { name: "TailwindCSS", icon: Icons.Tailwind },
+            { name: "Docker", icon: <Package className="w-4 h-4 text-blue-400" /> }
+        ],
+        links: { github: "https://github.com/chandangupta7143/ECOQUEST-MERN", demo: "https://ecoquest-pearl.vercel.app/" },
         image: "/Ecoquest.png",
         color: "from-emerald-900 to-teal-900"
     },
