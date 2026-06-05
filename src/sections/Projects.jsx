@@ -58,7 +58,7 @@ const Icons = {
 
 const projects = [
     {
-        title: "EcoQuest - JAVA FULL STACK",
+        title: "ECOQUEST - JAVA FULL STACK",
         category: "Gamified EdTech",
         description: "EcoQuest is a gamified environmental education platform built for students and teachers. It empowers students to take real-world civic actions (planting trees, recycling, saving water) and rewards them with XP, leveling up their 'Eco-Warrior' status.",
         tech: [

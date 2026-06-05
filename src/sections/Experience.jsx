@@ -32,15 +32,15 @@ const education = [
     {
         degree: "B.Tech in Computer Science",
         institution: "Lovely Professional University",
-        year: "2022 - Present",
+        year: "2022 - 2026",
         grade: "CGPA 6.05",
         gradeLabel: "CGPA",
-        status: "Pursuing",
+        status: "Completed",
 
         link: "https://www.lpu.in/",
-        color: "text-orange-500",
-        bg: "bg-orange-500/10",
-        border: "border-orange-500/20"
+        color: "text-emerald-500",
+        bg: "bg-emerald-500/10",
+        border: "border-emerald-500/20"
     },
     {
         degree: "Intermediate (PCM)",
