@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Reveal } from '../components/Reveal';
-import { Send, Loader2, CheckCircle2, AlertCircle, ChevronRight, Terminal, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Send, Loader2, CheckCircle2, Terminal, Github, Linkedin, Mail, MapPin, Sparkles, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
     const [message, setMessage] = useState('');
@@ -21,7 +22,7 @@ const Contact = () => {
                 },
                 body: JSON.stringify({
                     message: message,
-                    _subject: "New Portfolio Message from " + new Date().toLocaleString()
+                    _subject: "New Portfolio Transmission from " + new Date().toLocaleString()
                 })
             });
 
@@ -40,65 +41,68 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden py-24">
+        <section id="contact" className="pt-8 pb-12 relative overflow-hidden flex flex-col justify-center items-center">
+            <div className="max-w-6xl mx-auto px-4 md:px-8 text-center relative z-10 w-full flex flex-col items-center gap-6 md:gap-8">
 
-            {/* Ultra Premium Ambient Background */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-indigo-600/20 blur-[150px] rounded-full opacity-20 pointer-events-none animate-pulse duration-[10000ms]"></div>
-
-            <div className="max-w-6xl mx-auto px-6 text-center relative z-10 w-full flex flex-col items-center gap-16">
-
+                {/* Header */}
                 <Reveal>
-                    <div className="space-y-6 md:space-y-8">
-
-                        <h2 className="text-5xl md:text-9xl font-bold tracking-tighter leading-none select-none">
-                            <span className="text-zinc-100 block">LET'S WORK</span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-zinc-500 via-zinc-200 to-zinc-600" style={{ WebkitTextStroke: '0px' }}>
+                    <div className="flex flex-col items-center gap-2">
+                        <h2 className="text-4xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-none select-none text-white">
+                            LET'S WORK <br />
+                            <motion.span
+                                animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-indigo-400 bg-[length:200%_auto] inline-block"
+                            >
                                 TOGETHER
-                            </span>
+                            </motion.span>
                         </h2>
+
+                        <p className="text-zinc-400 text-sm md:text-base font-light max-w-xl mt-1 leading-relaxed">
+                            Have an exciting project, full-stack role, or architectural challenge? Drop a direct message below.
+                        </p>
                     </div>
                 </Reveal>
 
-                <Reveal>
+                {/* Message Capsule Form */}
+                <Reveal width="100%">
                     <div className="w-full max-w-3xl mx-auto relative group">
                         {/* Glow Effect behind form */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full opacity-20 group-hover:opacity-40 blur-xl transition-opacity duration-700"></div>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-3xl md:rounded-full opacity-25 group-hover:opacity-50 blur-xl transition-opacity duration-700 pointer-events-none" />
 
-                        <form onSubmit={handleSubmit} className="relative">
-
-                            {/* Input Container - Ultra Sleek Capsule */}
+                        <form onSubmit={handleSubmit} className="relative z-10">
                             <div className={`
-                                relative flex items-center p-2
-                                bg-zinc-950/80 backdrop-blur-2xl 
-                                border ${status === 'error' ? 'border-red-500/50' : status === 'success' ? 'border-green-500/50' : 'border-zinc-800 group-hover:border-zinc-700'} 
-                                rounded-full transition-all duration-500 shadow-2xl
+                                relative flex flex-col md:flex-row items-center p-2.5 md:p-3
+                                bg-zinc-900/80 backdrop-blur-2xl 
+                                border ${status === 'error' ? 'border-red-500/60' : status === 'success' ? 'border-emerald-500/60' : 'border-white/10 group-hover:border-cyan-500/50'} 
+                                rounded-3xl md:rounded-full transition-all duration-500 shadow-2xl gap-3 md:gap-0
                             `}>
-                                <div className="pl-6 md:pl-8 text-zinc-600">
-                                    <Terminal className="w-5 h-5 md:w-6 md:h-6" />
+                                <div className="hidden md:flex pl-6 text-cyan-400">
+                                    <Terminal className="w-6 h-6" />
                                 </div>
 
                                 <input
                                     type="text"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
-                                    placeholder={status === 'success' ? "Message Transmitted." : "Message Me.."}
+                                    placeholder={status === 'success' ? "Message Transmitted Successfully." : "Type your message or project inquiry..."}
                                     disabled={status === 'sending' || status === 'success'}
-                                    className="w-full bg-transparent px-4 py-4 md:py-6 text-zinc-100 placeholder-zinc-600 outline-none text-lg md:text-xl font-mono disabled:opacity-50 text-left flex-1 min-w-0 tracking-tight"
+                                    className="w-full bg-transparent px-4 md:px-6 py-3 md:py-4 text-zinc-100 placeholder-zinc-500 outline-none text-base md:text-lg font-mono disabled:opacity-50 text-left flex-1 min-w-0 tracking-tight"
                                 />
 
                                 <button
                                     type="submit"
                                     disabled={status === 'sending' || status === 'success' || !message.trim()}
                                     className={`
-                                        h-14 md:h-16 px-8 md:px-10 rounded-full flex items-center justify-center gap-3 
+                                        w-full md:w-auto h-12 md:h-14 px-8 md:px-10 rounded-2xl md:rounded-full flex items-center justify-center gap-3 
                                         uppercase font-bold tracking-wider text-xs md:text-sm transition-all duration-500 flex-shrink-0
                                         ${status === 'success'
                                             ? 'bg-emerald-500 text-black shadow-[0_0_20px_rgba(16,185,129,0.4)]'
                                             : status === 'sending'
                                                 ? 'bg-zinc-800 text-zinc-400'
                                                 : message.trim()
-                                                    ? 'bg-white text-black hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]'
-                                                    : 'bg-zinc-900 text-zinc-600 border border-zinc-800 cursor-not-allowed'
+                                                    ? 'bg-gradient-to-r from-cyan-400 to-indigo-500 text-white hover:scale-105 shadow-[0_0_25px_rgba(6,182,212,0.4)]'
+                                                    : 'bg-zinc-950 text-zinc-600 border border-white/5 cursor-not-allowed'
                                         }
                                     `}
                                 >
@@ -108,57 +112,72 @@ const Contact = () => {
                                         <CheckCircle2 className="w-4 h-4" />
                                     ) : (
                                         <>
-                                            <span>Send</span>
-                                            <Send className="w-3 h-3 md:w-4 md:h-4" />
+                                            <span>Send Message</span>
+                                            <Send className="w-4 h-4" />
                                         </>
                                     )}
                                 </button>
                             </div>
 
-                            {/* Status Message */}
-                            <div className="absolute top-full left-0 w-full text-center mt-4">
-                                {status === 'error' && (
-                                    <span className="text-red-400 text-xs font-mono tracking-widest uppercase">
-                                        Transmission Failed
-                                    </span>
-                                )}
-                            </div>
+                            {status === 'error' && (
+                                <div className="mt-3 text-red-400 text-xs font-mono tracking-widest uppercase">
+                                    Transmission Failed. Please try again or email directly.
+                                </div>
+                            )}
                         </form>
                     </div>
                 </Reveal>
 
-                {/* PREMIUM DOCK ICONS */}
+                {/* HIGH-TECH CIRCULAR SYMBOL ICON DOCK */}
                 <Reveal>
-                    <div className="flex justify-center gap-6 md:gap-8">
+                    <div className="flex justify-center items-center gap-5 md:gap-8 pt-4">
                         {[
-                            { Icon: Github, href: "https://github.com/chandangupta7143", label: "Github", color: "text-white", bg: "hover:bg-white/10" },
-                            { Icon: Linkedin, href: "https://www.linkedin.com/in/chandan-gupta7143", label: "LinkedIn", color: "text-[#0077b5]", bg: "hover:bg-[#0077b5]/10" },
-                            { Icon: Mail, href: "mailto:Chandangupta21092005@gmail.com", label: "Email", color: "text-[#EA4335]", bg: "hover:bg-[#EA4335]/10" }
-                        ].map(({ Icon, href, label, color, bg }, index) => (
-                            <a
+                            { 
+                                Icon: Mail, 
+                                href: "mailto:Chandangupta21092005@gmail.com", 
+                                title: "Email: Chandangupta21092005@gmail.com", 
+                                color: "text-rose-400",
+                                glow: "hover:shadow-[0_0_35px_rgba(244,63,94,0.4)]",
+                                border: "group-hover:border-rose-500/60"
+                            },
+                            { 
+                                Icon: Linkedin, 
+                                href: "https://www.linkedin.com/in/chandan-gupta7143", 
+                                title: "LinkedIn: chandan-gupta7143", 
+                                color: "text-sky-400",
+                                glow: "hover:shadow-[0_0_35px_rgba(56,189,248,0.4)]",
+                                border: "group-hover:border-sky-500/60"
+                            },
+                            { 
+                                Icon: Github, 
+                                href: "https://github.com/chandangupta7143", 
+                                title: "GitHub: chandangupta7143", 
+                                color: "text-white",
+                                glow: "hover:shadow-[0_0_35px_rgba(255,255,255,0.3)]",
+                                border: "group-hover:border-white/40"
+                            }
+                        ].map(({ Icon, href, title, color, glow, border }, index) => (
+                            <motion.a
                                 key={index}
+                                whileHover={{ y: -6, scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
                                 href={href}
                                 target="_blank"
                                 rel="noreferrer"
+                                title={title}
                                 className={`
-                                    group relative p-4 bg-zinc-900/50 border border-zinc-800 rounded-full 
-                                    ${bg} hover:border-zinc-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]
+                                    group relative flex items-center justify-center 
+                                    w-14 h-14 md:w-16 md:h-16 rounded-full
+                                    bg-zinc-950/80 border border-white/10 ${border}
+                                    backdrop-blur-xl transition-all duration-300 ${glow}
                                 `}
-                                aria-label={label}
                             >
-                                <Icon className={`w-6 h-6 md:w-7 md:h-7 ${color} transition-all duration-300`} />
-                            </a>
+                                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-full transition-opacity pointer-events-none" />
+                                <Icon className={`w-6 h-6 md:w-7 md:h-7 ${color} transition-all duration-300 drop-shadow-md group-hover:scale-110`} />
+                            </motion.a>
                         ))}
                     </div>
                 </Reveal>
-
-            </div>
-
-            {/* Minimal Footer with BOLD Text */}
-            <div className="absolute bottom-6 w-full text-center">
-                <p className="text-indigo-600 font-black text-xs md:text-sm font-mono tracking-[0.3em] uppercase hover:text-indigo-500 transition-colors duration-300 cursor-default">
-                    Designed & Built by Chandan Gupta
-                </p>
 
             </div>
         </section>

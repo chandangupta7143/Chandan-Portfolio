@@ -1,145 +1,244 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Reveal } from '../components/Reveal';
+import { motion, AnimatePresence } from 'framer-motion';
+import { User, Target, Compass, Sparkles, CheckCircle2, CreditCard, X, ArrowUpRight, Cpu, Code2, ShieldCheck, Zap } from 'lucide-react';
 
 const About = () => {
+    const [isCardModalOpen, setIsCardModalOpen] = useState(false);
+
     return (
-        <section id="about" className="py-24 relative overflow-hidden">
+        <section id="about" className="py-12 md:py-16 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 space-y-10 md:space-y-12">
 
-            {/* --- ETHEREAL ATMOSPHERE --- */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-900/10 rounded-full blur-[100px] pointer-events-none opacity-40"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-900/10 rounded-full blur-[100px] pointer-events-none opacity-40"></div>
+                {/* Section Header */}
+                <Reveal>
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono tracking-widest uppercase mb-4">
+                                <User className="w-3.5 h-3.5" />
+                                Software Architect &amp; Developer Identity
+                            </div>
+                            <motion.h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white uppercase select-none">
+                                <motion.span
+                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                                    transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
+                                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-zinc-100 to-indigo-400 bg-[length:200%_auto] inline-block drop-shadow-[0_0_30px_rgba(6,182,212,0.35)]"
+                                >
+                                    CHANDAN GUPTA
+                                </motion.span>
+                            </motion.h2>
+                        </div>
+                        <p className="text-zinc-400 font-light text-base md:text-lg max-w-md leading-relaxed">
+                            Java Full-Stack Engineer crafting resilient backend systems, distributed microservices, and reactive web applications.
+                        </p>
+                    </div>
+                </Reveal>
 
-            <div className="max-w-6xl mx-auto px-6 relative z-10 space-y-16 md:space-y-24">
+                {/* --- ROW 1: PRIMARY HERO (BIO & HIGH-TECH PORTRAIT) --- */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-                {/* --- ROW 1: PRIMARY (BIO & PHOTO) --- */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-
-                    {/* COL 1: BIO NARRATIVE */}
-                    <div className="flex flex-col gap-8 order-2 lg:order-1">
+                    {/* Left Column: Bio Narrative (7 Cols) */}
+                    <div className="lg:col-span-7 flex flex-col gap-8 order-2 lg:order-1">
                         <Reveal>
-                            <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                                Building the <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-white to-purple-300">
-                                    Unimaginable.
-                                </span>
+                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+                                Architecting <br />
+                                <motion.span
+                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                                    transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-200 to-purple-400 bg-[length:200%_auto] inline-block"
+                                >
+                                    Scalable Systems.
+                                </motion.span>
                             </h3>
                         </Reveal>
 
                         <Reveal delay={0.1}>
-                            <div className="space-y-6 max-w-xl">
-                                <h4 className="text-xl text-indigo-300/90 font-light tracking-wide">
-                                    Engineering with <span className="text-indigo-300 font-normal">Soul.</span>
-                                </h4>
+                            <div className="space-y-6 text-base md:text-lg text-zinc-300 font-light leading-relaxed">
+                                <p>
+                                    I am <span className="text-white font-semibold underline decoration-cyan-500/50 underline-offset-4">Chandan Gupta</span>, a Computer Science Engineer with an unwavering passion for building high-performance digital ecosystems.
+                                </p>
+                                <p>
+                                    My expertise spans the entire software engineering lifecycle — from designing event-driven microservices with <span className="text-cyan-400 font-medium">Spring Boot, Redis, and MongoDB</span> to building reactive, intuitive user interfaces with <span className="text-cyan-400 font-medium">React.js &amp; Tailwind CSS</span>.
+                                </p>
+                                <p>
+                                    Rooted in rigorous computer science principles, I prioritize clean code architecture, optimal algorithmic complexity, and production-grade security in every system I engineer.
+                                </p>
+                            </div>
+                        </Reveal>
 
-                                <div className="space-y-4 text-base text-zinc-400 font-light leading-relaxed">
-                                    <p>
-                                        I'm <span className="text-zinc-100 font-medium pt-0.5 border-b border-indigo-500/30">Chandan Gupta</span>, a Java Full-Stack Engineer focused on building scalable, secure, and maintainable software systems.
-                                    </p>
-                                    <p>
-                                        I work across backend architecture, RESTful APIs, databases, and modern frontend interfaces — with a foundation in <span className="text-zinc-100">data structures, algorithms, and system design</span>.
-                                    </p>
+                        <Reveal delay={0.2}>
+                            <div className="flex flex-wrap gap-4 pt-2">
+                                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/60 border border-white/10 text-xs font-mono text-zinc-300">
+                                    <Zap className="w-4 h-4 text-cyan-400" />
+                                    <span>High Concurrency Backend</span>
                                 </div>
-                                <div className="w-12 h-px bg-indigo-500/30 mt-2"></div>
+                                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/60 border border-white/10 text-xs font-mono text-zinc-300">
+                                    <Cpu className="w-4 h-4 text-indigo-400" />
+                                    <span>Distributed Microservices</span>
+                                </div>
+                                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/60 border border-white/10 text-xs font-mono text-zinc-300">
+                                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                                    <span>JWT &amp; RBAC Security</span>
+                                </div>
                             </div>
                         </Reveal>
                     </div>
 
-                    {/* COL 2: PHOTO PORTRAIT */}
-                    <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+                    {/* Right Column: High-Tech Photo Portrait (5 Cols) */}
+                    <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2 w-full">
                         <Reveal width="100%">
-                            <div className="relative w-full max-w-sm aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/10 bg-zinc-900 group transition-all duration-500 hover:border-indigo-500/30 hover:shadow-indigo-900/20">
-                                {/* Ambient Inner Glow (Appears on Hover) */}
-                                <div className="absolute inset-0 bg-radial-gradient from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+                            <motion.div
+                                whileHover={{ y: -6, scale: 1.01 }}
+                                transition={{ duration: 0.4 }}
+                                className="group relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-cyan-500/40 bg-zinc-950 shadow-[0_0_60px_rgba(6,182,212,0.25)] hover:shadow-[0_0_85px_rgba(6,182,212,0.45)] transition-all duration-500"
+                            >
+                                {/* Top Glow Accent Line */}
+                                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent z-30" />
 
-                                {/* Dark Gradient Overlay (Depth) */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-700"></div>
+                                {/* Dark Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none" />
 
                                 <img
                                     src="/myimg.png"
                                     alt="Chandan Gupta"
-                                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                                    className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                                 />
 
-                                {/* --- IDENTITY OVERLAY (Seamless Integration) --- */}
-                                <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col items-start gap-3">
-                                    <div className="flex flex-col gap-1">
-                                        <h3 className="text-white font-bold text-2xl tracking-tight leading-none drop-shadow-lg">Chandan Gupta</h3>
-                                        <p className="text-indigo-200/90 text-sm font-medium tracking-widest uppercase drop-shadow-md">Full Stack Visionary</p>
+                                {/* Identity Overlay Card */}
+                                <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col items-start gap-3 p-5 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-2xl shadow-2xl">
+                                    <div className="flex flex-col gap-0.5">
+                                        <h4 className="text-white font-black text-2xl tracking-tight">Chandan Gupta</h4>
+                                        <p className="text-cyan-400 text-xs font-mono tracking-widest uppercase font-bold">Java Full Stack Engineer</p>
                                     </div>
 
-                                    <div className="flex items-center gap-2.5">
-                                        <span className="relative flex h-2 w-2">
+                                    <div className="flex items-center gap-2">
+                                        <span className="relative flex h-2.5 w-2.5">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.8)]"></span>
+                                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                                         </span>
-                                        <span className="text-[10px] font-bold text-emerald-300 uppercase tracking-[0.2em] shadow-black drop-shadow-md">Available for work</span>
+                                        <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase tracking-widest">Available For Software Roles</span>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </Reveal>
                     </div>
                 </div>
 
-                {/* --- ROW 2: SECONDARY (3 COL Grid) --- */}
+                {/* --- ROW 2: SECONDARY PHILOSOPHY CARDS (3 COL GRID) --- */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* Card 1: Mission (Premium Glass) */}
-                    <Reveal delay={0.2} className="h-full">
-                        <div className="group h-full p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-violet-500/30 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col gap-4">
-                            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                            <div className="relative z-10">
-                                <h4 className="flex items-center gap-3 text-violet-200/90 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-violet-400 shadow-[0_0_8px_rgba(167,139,250,0.5)]"></span>
-                                    Mission
-                                </h4>
-                                <p className="text-sm text-zinc-400 font-light leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
-                                    To design and build <span className="text-zinc-200 font-medium border-b border-violet-500/20">reliable, scalable, and maintainable</span> software systems that solve real-world problems.
+                    
+                    {/* Card 1: Mission Card */}
+                    <Reveal delay={0.1} width="100%">
+                        <motion.div
+                            whileHover={{ y: -6 }}
+                            className="group h-full p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-cyan-500/40 transition-all duration-500 backdrop-blur-xl shadow-xl flex flex-col justify-between overflow-hidden relative"
+                        >
+                            <div className="space-y-4 relative z-10">
+                                <div className="flex items-center gap-3">
+                                    <Target className="w-6 h-6 text-cyan-400" />
+                                    <h4 className="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Core Mission</h4>
+                                </div>
+                                <h5 className="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                                    Resilient Engineering
+                                </h5>
+                                <p className="text-sm text-zinc-400 font-light leading-relaxed">
+                                    To architect and deliver high-concurrency, fault-tolerant software systems built on robust backend design and scalable cloud infrastructure.
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     </Reveal>
 
-                    {/* Card 2: Vision (Premium Glass) */}
-                    <Reveal delay={0.3} className="h-full">
-                        <div className="group h-full p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-cyan-500/30 transition-all duration-500 backdrop-blur-sm relative overflow-hidden flex flex-col gap-4">
-                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                            <div className="relative z-10">
-                                <h4 className="flex items-center gap-3 text-cyan-200/90 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.5)]"></span>
-                                    Vision
-                                </h4>
-                                <p className="text-sm text-zinc-400 font-light leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
-                                    To grow as a <span className="text-zinc-200 font-medium border-b border-cyan-500/20">globally competent software engineer</span> contributing to high-impact systems.
+                    {/* Card 2: Vision Card */}
+                    <Reveal delay={0.2} width="100%">
+                        <motion.div
+                            whileHover={{ y: -6 }}
+                            className="group h-full p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-indigo-500/40 transition-all duration-500 backdrop-blur-xl shadow-xl flex flex-col justify-between overflow-hidden relative"
+                        >
+                            <div className="space-y-4 relative z-10">
+                                <div className="flex items-center gap-3">
+                                    <Compass className="w-6 h-6 text-indigo-400" />
+                                    <h4 className="text-xs font-mono font-bold tracking-widest text-indigo-400 uppercase">Global Vision</h4>
+                                </div>
+                                <h5 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                                    Engineering Excellence
+                                </h5>
+                                <p className="text-sm text-zinc-400 font-light leading-relaxed">
+                                    To continually master emergent technologies, algorithms, and system design patterns to contribute to world-class software ecosystems.
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     </Reveal>
 
-                    {/* Card 3: Business Card (Premium Display Case) */}
-                    <Reveal delay={0.4} className="h-full">
-                        <div className="h-full group relative rounded-3xl bg-black/80 border border-white/10 overflow-hidden shadow-2xl shadow-black/50 p-6 flex items-center justify-center transition-all duration-500 hover:border-indigo-500/20">
-                            {/* Ambient Glow */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-indigo-500/50 blur-[20px] group-hover:bg-indigo-400/80 transition-all duration-700"></div>
+                    {/* Card 3: Interactive Business Card Showcase */}
+                    <Reveal delay={0.3} width="100%">
+                        <motion.div
+                            whileHover={{ y: -6 }}
+                            onClick={() => setIsCardModalOpen(true)}
+                            className="group h-full p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-purple-500/40 transition-all duration-500 backdrop-blur-xl shadow-xl flex flex-col justify-between cursor-pointer overflow-hidden relative"
+                        >
+                            <div className="flex items-center justify-between mb-4 relative z-10">
+                                <div className="flex items-center gap-2 text-purple-400">
+                                    <CreditCard className="w-5 h-5" />
+                                    <span className="text-xs font-mono font-bold tracking-widest uppercase">Digital Pass</span>
+                                </div>
+                                <span className="text-[10px] font-mono text-zinc-400 bg-zinc-950 px-2.5 py-1 rounded-md border border-white/5 flex items-center gap-1 group-hover:text-white">
+                                    <span>Expand</span>
+                                    <ArrowUpRight className="w-3 h-3 text-purple-400" />
+                                </span>
+                            </div>
 
-                            {/* Inner Spotlight */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                            <img
-                                src="/business_card.png"
-                                alt="Business Card"
-                                className="w-full h-auto object-contain md:max-h-[120px] opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out relative z-10 drop-shadow-2xl"
-                            />
-                        </div>
+                            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 shadow-inner flex items-center justify-center p-2">
+                                <img
+                                    src="/business_card.png"
+                                    alt="Chandan Gupta Business Card"
+                                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                />
+                            </div>
+                        </motion.div>
                     </Reveal>
+
                 </div>
 
             </div>
 
-            <style jsx>{`
-                .perspective-1000 { perspective: 1000px; }
-                .preserve-3d { transform-style: preserve-3d; }
-            `}</style>
+            {/* Business Card Modal Lightbox */}
+            <AnimatePresence>
+                {isCardModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsCardModalOpen(false)}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="relative max-w-3xl w-full bg-zinc-900 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl overflow-hidden"
+                        >
+                            <button
+                                onClick={() => setIsCardModalOpen(false)}
+                                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-950 text-zinc-400 hover:text-white border border-white/10 transition-colors z-20"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            <h3 className="text-2xl font-bold text-white mb-2">Chandan Gupta</h3>
+                            <p className="text-purple-400 text-xs font-mono mb-6 uppercase tracking-widest">Digital Developer Card</p>
+
+                            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 shadow-2xl p-4 flex items-center justify-center">
+                                <img
+                                    src="/business_card.png"
+                                    alt="Chandan Gupta Business Card"
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
