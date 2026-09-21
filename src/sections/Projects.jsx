@@ -204,10 +204,6 @@ const Projects = () => {
                 <Reveal>
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono tracking-widest uppercase mb-4">
-                                <Sparkles className="w-3.5 h-3.5" />
-                                Featured Engineering Works
-                            </div>
                             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter">
                                 Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400">Projects</span>
                             </h2>
@@ -284,11 +280,6 @@ const Projects = () => {
                                         }}
                                     />
 
-                                    {/* Background Watermark Index */}
-                                    <span className="absolute top-4 right-8 text-[6rem] md:text-[10rem] font-black text-white/[0.02] group-hover:text-white/[0.05] transition-colors select-none pointer-events-none font-mono">
-                                        0{index + 1}
-                                    </span>
-
                                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
 
                                         {/* Left Side: Content & Badges (7 Columns) */}
@@ -298,10 +289,6 @@ const Projects = () => {
                                                 <div className="flex flex-wrap items-center gap-3 mb-6">
                                                     <span className="text-xs font-mono tracking-widest uppercase text-cyan-400 border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 rounded-full font-bold">
                                                         {project.category}
-                                                    </span>
-
-                                                    <span className="text-xs font-mono tracking-wider uppercase text-zinc-400 border border-white/10 bg-zinc-950/60 px-3 py-1 rounded-full">
-                                                        {project.badge}
                                                     </span>
 
                                                     {project.comingSoon && (

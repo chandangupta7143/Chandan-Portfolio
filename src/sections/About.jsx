@@ -1,131 +1,135 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Reveal } from '../components/Reveal';
-import { motion, AnimatePresence } from 'framer-motion';
-import { User, Target, Compass, Sparkles, CheckCircle2, CreditCard, X, ArrowUpRight, Cpu, Code2, ShieldCheck, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Target, Compass } from 'lucide-react';
+import ArchitecturalSystemBlueprint from '../components/ArchitecturalSystemBlueprint';
+
+// TOGGLE FLAG: Set to false to instantly revert back to original photo setup!
+const USE_TRIAL_IMAGE = true;
 
 const About = () => {
-    const [isCardModalOpen, setIsCardModalOpen] = useState(false);
 
     return (
-        <section id="about" className="py-12 md:py-16 relative overflow-hidden">
+        <section id="about" className="pt-8 pb-12 md:pt-10 md:pb-14 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 space-y-10 md:space-y-12">
 
-                {/* Section Header */}
-                <Reveal>
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                        <div>
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono tracking-widest uppercase mb-4">
-                                <User className="w-3.5 h-3.5" />
-                                Software Architect &amp; Developer Identity
-                            </div>
-                            <motion.h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white uppercase select-none">
-                                <motion.span
-                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                                    transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-                                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-zinc-100 to-indigo-400 bg-[length:200%_auto] inline-block drop-shadow-[0_0_30px_rgba(6,182,212,0.35)]"
-                                >
-                                    CHANDAN GUPTA
-                                </motion.span>
-                            </motion.h2>
-                        </div>
-                        <p className="text-zinc-400 font-light text-base md:text-lg max-w-md leading-relaxed">
-                            Java Full-Stack Engineer crafting resilient backend systems, distributed microservices, and reactive web applications.
-                        </p>
-                    </div>
-                </Reveal>
 
-                {/* --- ROW 1: PRIMARY HERO (BIO & HIGH-TECH PORTRAIT) --- */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-                    {/* Left Column: Bio Narrative (7 Cols) */}
-                    <div className="lg:col-span-7 flex flex-col gap-8 order-2 lg:order-1">
+                {/* --- PRIMARY COMPOSITION: ARCHITECTURE NARRATIVE & INTEGRATED STANDING FIGURE --- */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-2 xl:gap-4 items-start relative z-10">
+
+                    {/* Left Column: Bio Narrative & Engineering Depth (5 Cols on large) */}
+                    <div className="lg:col-span-5 flex flex-col gap-6 order-2 lg:order-1 z-10 pb-4">
                         <Reveal>
-                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+                            <div className="flex flex-col items-start">
+                                <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl font-black tracking-tighter text-white uppercase select-none leading-[0.88]">
+                                    CHANDAN <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-200 to-indigo-300">
+                                        GUPTA
+                                    </span>
+                                </h1>
+                                {/* Cyan Accent Underline */}
+                                <div className="w-14 h-1 bg-cyan-400 rounded-full mt-4 mb-2 shadow-[0_0_12px_#22d3ee]" />
+                            </div>
+                        </Reveal>
+
+                        {/* LEVEL 2: HEADLINE */}
+                        <Reveal delay={0.05}>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
                                 Architecting <br />
-                                <motion.span
-                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                                    transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-200 to-purple-400 bg-[length:200%_auto] inline-block"
-                                >
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
                                     Scalable Systems.
-                                </motion.span>
-                            </h3>
+                                </span>
+                            </h2>
                         </Reveal>
 
+                        {/* LEVEL 3: PROFESSIONAL POSITIONING */}
                         <Reveal delay={0.1}>
-                            <div className="space-y-6 text-base md:text-lg text-zinc-300 font-light leading-relaxed">
+                            <div className="space-y-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed">
                                 <p>
-                                    I am <span className="text-white font-semibold underline decoration-cyan-500/50 underline-offset-4">Chandan Gupta</span>, a Computer Science Engineer with an unwavering passion for building high-performance digital ecosystems.
+                                    I’m <span className="text-white font-semibold">Chandan Gupta</span>, a <span className="text-cyan-400 font-medium">Java Full Stack Developer</span> building scalable web applications and intelligent backend systems with <span className="text-white font-medium">Java, Spring Boot, React, and Spring AI</span>.
                                 </p>
                                 <p>
-                                    My expertise spans the entire software engineering lifecycle — from designing event-driven microservices with <span className="text-cyan-400 font-medium">Spring Boot, Redis, and MongoDB</span> to building reactive, intuitive user interfaces with <span className="text-cyan-400 font-medium">React.js &amp; Tailwind CSS</span>.
+                                    My work spans the full stack — from robust <span className="text-cyan-400 font-medium">Spring Boot APIs</span>, secure backend services, and database-driven applications to responsive <span className="text-cyan-400 font-medium">React</span> interfaces and AI-powered features using <span className="text-white font-medium">Spring AI</span> and modern LLM integrations.
                                 </p>
                                 <p>
-                                    Rooted in rigorous computer science principles, I prioritize clean code architecture, optimal algorithmic complexity, and production-grade security in every system I engineer.
+                                    I focus on writing clean, maintainable Java code and designing systems that are scalable, secure, and ready for real-world use — combining traditional software engineering with practical AI capabilities.
                                 </p>
                             </div>
                         </Reveal>
 
-                        <Reveal delay={0.2}>
-                            <div className="flex flex-wrap gap-4 pt-2">
-                                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/60 border border-white/10 text-xs font-mono text-zinc-300">
-                                    <Zap className="w-4 h-4 text-cyan-400" />
-                                    <span>High Concurrency Backend</span>
-                                </div>
-                                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/60 border border-white/10 text-xs font-mono text-zinc-300">
-                                    <Cpu className="w-4 h-4 text-indigo-400" />
-                                    <span>Distributed Microservices</span>
-                                </div>
-                                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/60 border border-white/10 text-xs font-mono text-zinc-300">
-                                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                                    <span>JWT &amp; RBAC Security</span>
-                                </div>
-                            </div>
-                        </Reveal>
+
                     </div>
 
-                    {/* Right Column: High-Tech Photo Portrait (5 Cols) */}
-                    <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2 w-full">
+                    {/* Right Column: Integrated Standing Figure & Architectural Blueprint Structure (7 Cols) */}
+                    <div className="lg:col-span-7 flex justify-center lg:justify-start lg:-ml-6 xl:-ml-10 order-1 lg:order-2 w-full relative">
                         <Reveal width="100%">
-                            <motion.div
-                                whileHover={{ y: -6, scale: 1.01 }}
-                                transition={{ duration: 0.4 }}
-                                className="group relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-cyan-500/40 bg-zinc-950 shadow-[0_0_60px_rgba(6,182,212,0.25)] hover:shadow-[0_0_85px_rgba(6,182,212,0.45)] transition-all duration-500"
-                            >
-                                {/* Top Glow Accent Line */}
-                                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent z-30" />
+                            {USE_TRIAL_IMAGE ? (
+                                /* === REFERENCE BLUEPRINT: Full-Body Cutout (Head to Shoes) + Architectural System Blueprint === */
+                                <div className="relative w-full flex justify-center lg:justify-start items-start select-none">
+                                    {/* Ambient Backlight Glow behind silhouette */}
+                                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-transparent rounded-full blur-[120px] pointer-events-none -z-10" />
 
-                                {/* Dark Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none" />
+                                    {/* Standing Cutout Figure of Chandan (HEAD TO SHOES 100% VISIBLE) */}
+                                    <div className="relative flex items-start justify-center lg:justify-start">
+                                        <div className="relative z-20 shrink-0">
+                                            <img
+                                                src="/chandan_fullbody.png"
+                                                alt="Chandan Gupta - Software Architect"
+                                                className="w-auto h-[700px] sm:h-[760px] md:h-[820px] lg:h-[860px] xl:h-[900px] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
+                                            />
+                                            {/* Floor Shadow Under Shoes */}
+                                            <div className="absolute bottom-0 left-4 right-12 h-5 bg-black/90 blur-md rounded-full -z-10" />
+                                        </div>
 
-                                <img
-                                    src="/myimg.png"
-                                    alt="Chandan Gupta"
-                                    className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                                />
-
-                                {/* Identity Overlay Card */}
-                                <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col items-start gap-3 p-5 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-2xl shadow-2xl">
-                                    <div className="flex flex-col gap-0.5">
-                                        <h4 className="text-white font-black text-2xl tracking-tight">Chandan Gupta</h4>
-                                        <p className="text-cyan-400 text-xs font-mono tracking-widest uppercase font-bold">Java Full Stack Engineer</p>
-                                    </div>
-
-                                    <div className="flex items-center gap-2">
-                                        <span className="relative flex h-2.5 w-2.5">
-                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                                        </span>
-                                        <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase tracking-widest">Available For Software Roles</span>
+                                        {/* === ARCHITECTURAL SYSTEM BLUEPRINT (Directly Under Resting Hand) === */}
+                                        <div className="relative z-10 -ml-16 sm:-ml-20 md:-ml-28 lg:-ml-38 mt-[255px] sm:mt-[280px] md:mt-[305px] lg:mt-[325px] xl:mt-[335px] pointer-events-auto transform origin-top-left scale-90 sm:scale-95 md:scale-95 lg:scale-95 xl:scale-100">
+                                            <ArchitecturalSystemBlueprint />
+                                        </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            ) : (
+                                /* === ORIGINAL MODE: Exact original portrait for instant undo === */
+                                <motion.div
+                                    whileHover={{ y: -6, scale: 1.01 }}
+                                    transition={{ duration: 0.4 }}
+                                    className="group relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-cyan-500/40 bg-zinc-950 shadow-[0_0_60px_rgba(6,182,212,0.25)] hover:shadow-[0_0_85px_rgba(6,182,212,0.45)] transition-all duration-500"
+                                >
+                                    {/* Top Glow Accent Line */}
+                                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent z-30" />
+
+                                    {/* Dark Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-80 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none" />
+
+                                    <img
+                                        src="/myimg.png"
+                                        alt="Chandan Gupta"
+                                        className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                                    />
+
+                                    {/* Identity Overlay Card */}
+                                    <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col items-start gap-3 p-5 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-2xl shadow-2xl">
+                                        <div className="flex flex-col gap-0.5">
+                                            <h4 className="text-white font-black text-2xl tracking-tight">Chandan Gupta</h4>
+                                            <p className="text-cyan-400 text-xs font-mono tracking-widest uppercase font-bold">Java Full Stack Engineer</p>
+                                        </div>
+
+                                        <div className="flex items-center gap-2">
+                                            <span className="relative flex h-2.5 w-2.5">
+                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                                            </span>
+                                            <span className="text-[11px] font-mono font-bold text-emerald-400 uppercase tracking-widest">Available For Software Roles</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
                         </Reveal>
                     </div>
                 </div>
 
-                {/* --- ROW 2: SECONDARY PHILOSOPHY CARDS (3 COL GRID) --- */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* --- ROW 2: PHILOSOPHY CARDS (CORE MISSION & GLOBAL VISION) --- */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
                     {/* Card 1: Mission Card */}
                     <Reveal delay={0.1} width="100%">
@@ -136,13 +140,13 @@ const About = () => {
                             <div className="space-y-4 relative z-10">
                                 <div className="flex items-center gap-3">
                                     <Target className="w-6 h-6 text-cyan-400" />
-                                    <h4 className="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Core Mission</h4>
+                                    <h4 className="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">CORE MISSION</h4>
                                 </div>
                                 <h5 className="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-                                    Resilient Engineering
+                                    Building Reliable Systems
                                 </h5>
                                 <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                                    To architect and deliver high-concurrency, fault-tolerant software systems built on robust backend design and scalable cloud infrastructure.
+                                    To build scalable and secure applications with Java, Spring Boot, and modern full-stack technologies — turning complex requirements into reliable real-world software.
                                 </p>
                             </div>
                         </motion.div>
@@ -157,42 +161,14 @@ const About = () => {
                             <div className="space-y-4 relative z-10">
                                 <div className="flex items-center gap-3">
                                     <Compass className="w-6 h-6 text-indigo-400" />
-                                    <h4 className="text-xs font-mono font-bold tracking-widest text-indigo-400 uppercase">Global Vision</h4>
+                                    <h4 className="text-xs font-mono font-bold tracking-widest text-indigo-400 uppercase">GLOBAL VISION</h4>
                                 </div>
                                 <h5 className="text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors">
-                                    Engineering Excellence
+                                    Engineering Intelligent Solutions
                                 </h5>
                                 <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                                    To continually master emergent technologies, algorithms, and system design patterns to contribute to world-class software ecosystems.
+                                    To continuously evolve as a software engineer by combining strong engineering fundamentals with AI, Spring AI, and modern technologies to build smarter digital experiences.
                                 </p>
-                            </div>
-                        </motion.div>
-                    </Reveal>
-
-                    {/* Card 3: Interactive Business Card Showcase */}
-                    <Reveal delay={0.3} width="100%">
-                        <motion.div
-                            whileHover={{ y: -6 }}
-                            onClick={() => setIsCardModalOpen(true)}
-                            className="group h-full p-6 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-purple-500/40 transition-all duration-500 backdrop-blur-xl shadow-xl flex flex-col justify-between cursor-pointer overflow-hidden relative"
-                        >
-                            <div className="flex items-center justify-between mb-4 relative z-10">
-                                <div className="flex items-center gap-2 text-purple-400">
-                                    <CreditCard className="w-5 h-5" />
-                                    <span className="text-xs font-mono font-bold tracking-widest uppercase">Digital Pass</span>
-                                </div>
-                                <span className="text-[10px] font-mono text-zinc-400 bg-zinc-950 px-2.5 py-1 rounded-md border border-white/5 flex items-center gap-1 group-hover:text-white">
-                                    <span>Expand</span>
-                                    <ArrowUpRight className="w-3 h-3 text-purple-400" />
-                                </span>
-                            </div>
-
-                            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 shadow-inner flex items-center justify-center p-2">
-                                <img
-                                    src="/business_card.png"
-                                    alt="Chandan Gupta Business Card"
-                                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                                />
                             </div>
                         </motion.div>
                     </Reveal>
@@ -200,45 +176,6 @@ const About = () => {
                 </div>
 
             </div>
-
-            {/* Business Card Modal Lightbox */}
-            <AnimatePresence>
-                {isCardModalOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setIsCardModalOpen(false)}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
-                    >
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="relative max-w-3xl w-full bg-zinc-900 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl overflow-hidden"
-                        >
-                            <button
-                                onClick={() => setIsCardModalOpen(false)}
-                                className="absolute top-5 right-5 p-2 rounded-full bg-zinc-950 text-zinc-400 hover:text-white border border-white/10 transition-colors z-20"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-
-                            <h3 className="text-2xl font-bold text-white mb-2">Chandan Gupta</h3>
-                            <p className="text-purple-400 text-xs font-mono mb-6 uppercase tracking-widest">Digital Developer Card</p>
-
-                            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 shadow-2xl p-4 flex items-center justify-center">
-                                <img
-                                    src="/business_card.png"
-                                    alt="Chandan Gupta Business Card"
-                                    className="w-full h-full object-contain"
-                                />
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </section>
     );
 };

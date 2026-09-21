@@ -129,10 +129,6 @@ const Experience = () => {
                 <Reveal>
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono tracking-widest uppercase mb-4">
-                                <GraduationCap className="w-3.5 h-3.5" />
-                                Academic Distinction &amp; Qualifications
-                            </div>
                             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter">
                                 Education &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-cyan-400">Specialization</span>
                             </h2>
@@ -178,9 +174,6 @@ const Experience = () => {
                                             <Calendar className="w-3.5 h-3.5 text-cyan-400" />
                                             2022 – 2026
                                         </span>
-                                        <span className="text-xs font-mono text-zinc-400 bg-zinc-950/80 border border-white/10 px-3.5 py-1 rounded-full">
-                                            Graduation Degree
-                                        </span>
                                     </div>
 
                                     <div>
@@ -198,17 +191,16 @@ const Experience = () => {
                                         </a>
                                     </div>
 
-                                    </div>
+                                </div>
 
-                                {/* Right side: Grade Meter Display (4 Cols) */}
+                                {/* Right side: Grade Metric Display (4 Cols) */}
                                 <div className="lg:col-span-4 flex flex-col items-center justify-center p-8 rounded-2xl bg-zinc-950/80 border border-emerald-500/20 shadow-inner text-center">
-                                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Final Cumulative Score</span>
+                                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Cumulative Grade</span>
                                     <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200 tracking-tight">
                                         6.38
                                     </div>
-                                    <span className="text-xs font-mono text-emerald-400 font-bold tracking-widest uppercase mt-1">CGPA Grade</span>
-                                    <div className="w-full bg-zinc-900 h-2 rounded-full mt-4 overflow-hidden border border-white/5">
-                                        <div className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full w-[63.8%]" />
+                                    <div className="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold tracking-wider uppercase">
+                                        CGPA · Scale of 10.0
                                     </div>
                                 </div>
                             </div>
@@ -302,14 +294,14 @@ const Experience = () => {
                                         {training.title} Specialization
                                     </h4>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
                                         {training.highlights.map((bullet, bIdx) => (
-                                            <div key={bIdx} className="flex items-start gap-3 p-3.5 rounded-xl bg-zinc-950/60 border border-white/5 text-zinc-300 text-xs md:text-sm font-light leading-relaxed">
-                                                <Zap className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                                            <li key={bIdx} className="flex items-start gap-3 text-zinc-300 text-xs md:text-sm font-light leading-relaxed">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0 shadow-[0_0_8px_#22d3ee]" />
                                                 <span>{bullet}</span>
-                                            </div>
+                                            </li>
                                         ))}
-                                    </div>
+                                    </ul>
 
                                     <div className="pt-2">
                                         <a

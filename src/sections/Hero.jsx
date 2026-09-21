@@ -5,7 +5,7 @@ import { ArrowUpRight, Download, Terminal, Sparkles, Code, Cpu, ShieldCheck, Zap
 
 const Hero = () => {
     return (
-        <section id="hero" className="relative min-h-screen flex flex-col justify-center items-center px-4 md:px-8 overflow-hidden pt-20 pb-8">
+        <section id="hero" className="relative flex flex-col justify-center items-center px-4 md:px-8 overflow-hidden pt-24 pb-8 md:pt-28 md:pb-10">
             <div className="max-w-[1400px] mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                 {/* Left Column: Text Content & Action (4 Columns) */}

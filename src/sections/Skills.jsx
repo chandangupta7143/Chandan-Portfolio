@@ -134,17 +134,13 @@ const Skills = () => {
     });
 
     return (
-        <section id="skills" className="py-12 md:py-16 relative overflow-hidden">
+        <section id="skills" className="pt-8 pb-12 md:pt-10 md:pb-14 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
 
                 {/* Section Header */}
                 <Reveal>
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono tracking-widest uppercase mb-4">
-                                <Sparkles className="w-3.5 h-3.5" />
-                                Engineering Stack &amp; Competencies
-                            </div>
                             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter">
                                 Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-200 to-purple-400">Capabilities</span>
                             </h2>
@@ -231,11 +227,11 @@ const Skills = () => {
                                             <div
                                                 className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                 style={{
-                                                    background: `radial-gradient(300px circle at var(--x) var(--y), ${skill.color}20, transparent 60%)`
+                                                    background: `radial-gradient(240px circle at var(--x) var(--y), ${skill.color}15, transparent 70%)`
                                                 }}
                                             />
 
-                                            {/* Header Row: Icon & Tag */}
+                                            {/* Header Row: Icon */}
                                             <div className="flex items-center justify-between mb-4 relative z-10">
                                                 <div
                                                     className="p-3 rounded-xl bg-zinc-950/80 border border-white/5 shadow-inner transition-all duration-300 group-hover:scale-110"
@@ -245,17 +241,6 @@ const Skills = () => {
                                                         {skill.icon}
                                                     </div>
                                                 </div>
-
-                                                {skill.core ? (
-                                                    <span className="flex items-center gap-1 text-[10px] font-mono text-cyan-400 uppercase tracking-wider border border-cyan-500/30 bg-cyan-500/10 px-2 py-0.5 rounded-full font-bold">
-                                                        <CheckCircle2 className="w-3 h-3 text-cyan-400" />
-                                                        Core
-                                                    </span>
-                                                ) : (
-                                                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider bg-zinc-950/50 px-2 py-0.5 rounded-md border border-white/5">
-                                                        Tech
-                                                    </span>
-                                                )}
                                             </div>
 
                                             {/* Footer Row: Name & Skill Description */}
