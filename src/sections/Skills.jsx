@@ -153,7 +153,7 @@ const Skills = () => {
                 </Reveal>
 
                 {/* Search & Category Filter Navigation */}
-                <Reveal delay={0.1}>
+                <Reveal delay={0.1} width="100%">
                     <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-12">
                         {/* Category Filter Pills */}
                         <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">

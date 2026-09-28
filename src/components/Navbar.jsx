@@ -48,11 +48,11 @@ const Navbar = () => {
                     : 'bg-transparent border-b border-transparent'
                     }`}
             >
-                <div className="w-full px-6 md:px-8 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-12 items-center h-20">
-                    {/* Identity - Refined, Minimal, Professional (Col Span 3) */}
-                    <div className="col-span-1 md:col-span-3 flex justify-start">
-                        <a href="#" className="group flex items-center gap-3 md:gap-5">
-                            <div className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12">
+                <div className="w-full px-4 sm:px-6 md:px-8 max-w-7xl mx-auto flex items-center justify-between h-20">
+                    {/* Identity - Refined, Minimal, Professional */}
+                    <div className="flex items-center justify-start shrink-0">
+                        <a href="#" className="group flex items-center gap-3 md:gap-4">
+                            <div className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11">
                                 {/* Outer Rotating Ring (Cosmic) */}
                                 <div className="absolute inset-0 rounded-full border border-indigo-500/30 border-t-white/50 border-r-transparent border-l-transparent animate-[spin_3s_linear_infinite] group-hover:border-indigo-400/80 transition-colors" />
 
@@ -69,15 +69,15 @@ const Navbar = () => {
                             </div>
 
                             <div className="flex flex-col">
-                                <span className="text-sm md:text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 group-hover:via-indigo-300 group-hover:to-white transition-all duration-500 drop-shadow-lg group-hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.5)]">
+                                <span className="text-base sm:text-lg lg:text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 group-hover:via-indigo-300 group-hover:to-white transition-all duration-500 drop-shadow-lg group-hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.5)] whitespace-nowrap">
                                     CHANDAN GUPTA
                                 </span>
                             </div>
                         </a>
                     </div>
 
-                    {/* Navigation - Floating Capsule (Col Span 6) */}
-                    <div className="hidden md:flex col-span-6 justify-center">
+                    {/* Navigation - Floating Capsule (Desktop lg+) */}
+                    <div className="hidden lg:flex justify-center">
                         <nav className="flex items-center px-2 py-1.5 bg-zinc-900/50 backdrop-blur-md border border-white/5 rounded-full shadow-2xl shadow-black/20">
                             {navLinks.map((link, index) => {
                                 const isActive = activeSection === link.href;
@@ -115,8 +115,8 @@ const Navbar = () => {
                         </nav>
                     </div>
 
-                    {/* CTA - Primary Button (Ultra-Premium High-Shine Glass) */}
-                    <div className="hidden md:flex col-span-3 justify-end items-center gap-6">
+                    {/* CTA - Primary Button (Desktop lg+) */}
+                    <div className="hidden lg:flex justify-end items-center gap-6 shrink-0">
                         <a
                             href="#contact"
                             className="group relative px-6 py-2.5 flex items-center gap-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-xl transition-all duration-500 hover:bg-white/10 hover:border-indigo-500/30 shadow-[0_0_20px_rgba(99,102,241,0.1)] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] overflow-hidden"
@@ -132,11 +132,12 @@ const Navbar = () => {
                         </a>
                     </div>
 
-                    {/* Mobile Menu Trigger */}
-                    <div className="col-span-1 md:hidden flex justify-end">
+                    {/* Mobile & Tablet Menu Trigger */}
+                    <div className="flex lg:hidden justify-end">
                         <button
                             className="p-2 text-zinc-400 hover:text-white transition-colors"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Toggle Navigation Menu"
                         >
                             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -144,7 +145,7 @@ const Navbar = () => {
                 </div>
             </motion.nav>
 
-            {/* Mobile Experience (Custom Sheet) */}
+            {/* Mobile & Tablet Experience (Custom Sheet) */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
@@ -152,7 +153,7 @@ const Navbar = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-40 md:hidden bg-zinc-950/95 backdrop-blur-2xl"
+                        className="fixed inset-0 z-40 lg:hidden bg-zinc-950/95 backdrop-blur-2xl"
                     >
                         <div className="flex flex-col h-full p-8 pt-32">
                             <div className="flex flex-col space-y-4">

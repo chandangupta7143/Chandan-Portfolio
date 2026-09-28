@@ -262,13 +262,13 @@ const Experience = () => {
                 {/* 2. DSA SPECIALIZATION COMMAND CENTER (40% VISUAL WEIGHT) */}
                 {/* ========================================================================= */}
                 <div className="space-y-8">
-                    <Reveal>
-                        <div className="flex items-center justify-between border-l-4 border-cyan-500 pl-4 py-1">
+                    <Reveal width="100%">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-4 border-cyan-500 pl-4 py-1">
                             <div className="flex items-center gap-3">
                                 <Terminal className="w-7 h-7 text-cyan-400" />
                                 <h3 className="text-2xl md:text-4xl font-bold text-white tracking-tight">Structured Training Specialization</h3>
                             </div>
-                            <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 px-3.5 py-1 rounded-full uppercase tracking-widest font-semibold">
+                            <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 px-3.5 py-1 rounded-full uppercase tracking-widest font-semibold self-start sm:self-auto">
                                 Intensive 12-Week Track
                             </span>
                         </div>

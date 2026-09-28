@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="max-w-[1400px] mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                 {/* Left Column: Text Content & Action (4 Columns) */}
-                <div className="lg:col-span-4 order-2 lg:order-1 flex flex-col justify-center items-start">
+                <div className="lg:col-span-4 order-1 lg:order-1 flex flex-col justify-center items-start">
                     
                     {/* Top Greeting */}
                     <Reveal>
@@ -22,7 +22,7 @@ const Hero = () => {
 
                     {/* Master Animated Title */}
                     <Reveal delay={0.1}>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-5 font-sans leading-[0.95] select-none">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-5 font-sans leading-[0.95] select-none">
                             <motion.span
                                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
@@ -73,7 +73,7 @@ const Hero = () => {
                 </div>
 
                 {/* Right Column: Larger Banner Image Container (8 Columns) */}
-                <div className="lg:col-span-8 order-1 lg:order-2 flex justify-center w-full items-center">
+                <div className="lg:col-span-8 order-2 lg:order-2 flex justify-center w-full items-center">
                     <Reveal delay={0.3} width="100%">
                         <motion.div
                             className="relative w-full group overflow-hidden rounded-3xl border border-cyan-500/40 bg-zinc-950/80 shadow-[0_0_60px_rgba(6,182,212,0.3)] hover:shadow-[0_0_90px_rgba(6,182,212,0.5)] transition-all duration-700 ease-out"

@@ -14,13 +14,13 @@ function App() {
   const [introComplete, setIntroComplete] = useState(false);
 
   return (
-    <div className="relative min-h-screen text-zinc-50 font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="relative min-h-screen text-zinc-50 font-sans selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden">
 
       {/* Premium Intro Animation */}
       {!introComplete && <IntroOverlay onComplete={() => setIntroComplete(true)} />}
 
       {/* === UNIFIED PREMIUM BACKGROUND === */}
-      <div className="fixed inset-0 -z-50 bg-zinc-950">
+      <div className="fixed inset-0 -z-50 bg-zinc-950 overflow-hidden">
         {/* Subtle Noise Texture (handled in CSS) */}
 
         {/* Ambient Gradient Orbs - Fixed Position */}

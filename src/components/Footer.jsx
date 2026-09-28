@@ -15,11 +15,11 @@ const Footer = () => {
                 <motion.div
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
-                    className="relative group px-8 py-4 rounded-full bg-zinc-950/80 border border-cyan-500/40 hover:border-cyan-400 shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:shadow-[0_0_55px_rgba(6,182,212,0.5)] backdrop-blur-2xl transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden cursor-default"
+                    className="relative group px-4 sm:px-8 py-3 sm:py-4 rounded-2xl sm:rounded-full bg-zinc-950/80 border border-cyan-500/40 hover:border-cyan-400 shadow-[0_0_35px_rgba(6,182,212,0.25)] hover:shadow-[0_0_55px_rgba(6,182,212,0.5)] backdrop-blur-2xl transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden cursor-default"
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-purple-500/10 opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-                    <p className="relative z-10 text-sm md:text-base font-mono tracking-wider text-zinc-200 font-semibold flex items-center flex-wrap justify-center gap-1">
+                    <p className="relative z-10 text-xs sm:text-sm md:text-base font-mono tracking-wider text-zinc-200 font-semibold flex items-center flex-wrap justify-center gap-1 text-center">
                         CRAFTED &amp; ENGINEERED WITH <Heart className="w-4 h-4 text-cyan-400 fill-cyan-400 inline-block mx-1 animate-pulse drop-shadow-[0_0_12px_rgba(6,182,212,0.8)]" /> BY{" "}
                         <motion.span
                             animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}

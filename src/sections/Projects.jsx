@@ -216,7 +216,7 @@ const Projects = () => {
                 </Reveal>
 
                 {/* Filter & Search Bar */}
-                <Reveal delay={0.1}>
+                <Reveal delay={0.1} width="100%">
                     <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-16">
                         {/* Filter Buttons */}
                         <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">

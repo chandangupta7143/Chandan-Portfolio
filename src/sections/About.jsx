@@ -19,10 +19,10 @@ const About = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-2 xl:gap-4 items-start relative z-10">
 
                     {/* Left Column: Bio Narrative & Engineering Depth (5 Cols on large) */}
-                    <div className="lg:col-span-5 flex flex-col gap-6 order-2 lg:order-1 z-10 pb-4">
+                    <div className="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-1 z-10 pb-4">
                         <Reveal>
                             <div className="flex flex-col items-start">
-                                <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl font-black tracking-tighter text-white uppercase select-none leading-[0.88]">
+                                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-black tracking-tighter text-white uppercase select-none leading-[0.88]">
                                     CHANDAN <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-200 to-indigo-300">
                                         GUPTA
@@ -35,7 +35,7 @@ const About = () => {
 
                         {/* LEVEL 2: HEADLINE */}
                         <Reveal delay={0.05}>
-                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
+                            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
                                 Architecting <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
                                     Scalable Systems.
@@ -62,7 +62,7 @@ const About = () => {
                     </div>
 
                     {/* Right Column: Integrated Standing Figure & Architectural Blueprint Structure (7 Cols) */}
-                    <div className="lg:col-span-7 flex justify-center lg:justify-start lg:-ml-6 xl:-ml-10 order-1 lg:order-2 w-full relative">
+                    <div className="lg:col-span-7 flex justify-center lg:justify-start lg:-ml-6 xl:-ml-10 order-2 lg:order-2 w-full relative">
                         <Reveal width="100%">
                             {USE_TRIAL_IMAGE ? (
                                 /* === REFERENCE BLUEPRINT: Full-Body Cutout (Head to Shoes) + Architectural System Blueprint === */
@@ -70,21 +70,25 @@ const About = () => {
                                     {/* Ambient Backlight Glow behind silhouette */}
                                     <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-transparent rounded-full blur-[120px] pointer-events-none -z-10" />
 
-                                    {/* Standing Cutout Figure of Chandan (HEAD TO SHOES 100% VISIBLE) */}
-                                    <div className="relative flex items-start justify-center lg:justify-start">
-                                        <div className="relative z-20 shrink-0">
-                                            <img
-                                                src="/chandan_fullbody.png"
-                                                alt="Chandan Gupta - Software Architect"
-                                                className="w-auto h-[700px] sm:h-[760px] md:h-[820px] lg:h-[860px] xl:h-[900px] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
-                                            />
-                                            {/* Floor Shadow Under Shoes */}
-                                            <div className="absolute bottom-0 left-4 right-12 h-5 bg-black/90 blur-md rounded-full -z-10" />
-                                        </div>
+                                    {/* Responsive Viewport Frame: Reserves exact scaled height for mobile, tablet, and desktop */}
+                                    <div className="relative mx-auto lg:mx-0 w-[345px] h-[357px] min-[390px]:w-[378px] min-[390px]:h-[391px] sm:w-[600px] sm:h-[620px] md:w-[696px] md:h-[720px] lg:w-[826px] lg:h-[860px] xl:w-[870px] xl:h-[900px] overflow-visible">
+                                        {/* Unified Scale Canvas (870px x 900px) */}
+                                        <div className="w-[870px] h-[900px] shrink-0 origin-top-left transform scale-[0.396] min-[390px]:scale-[0.434] sm:scale-[0.69] md:scale-[0.80] lg:scale-[0.95] xl:scale-100 relative flex items-start">
+                                            {/* Standing Cutout Figure of Chandan (HEAD TO SHOES 100% VISIBLE) */}
+                                            <div className="relative z-20 shrink-0">
+                                                <img
+                                                    src="/chandan_fullbody.png"
+                                                    alt="Chandan Gupta - Software Architect"
+                                                    className="w-auto h-[900px] object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)]"
+                                                />
+                                                {/* Floor Shadow Under Shoes */}
+                                                <div className="absolute bottom-0 left-4 right-12 h-5 bg-black/90 blur-md rounded-full -z-10" />
+                                            </div>
 
-                                        {/* === ARCHITECTURAL SYSTEM BLUEPRINT (Directly Under Resting Hand) === */}
-                                        <div className="relative z-10 -ml-16 sm:-ml-20 md:-ml-28 lg:-ml-38 mt-[255px] sm:mt-[280px] md:mt-[305px] lg:mt-[325px] xl:mt-[335px] pointer-events-auto transform origin-top-left scale-90 sm:scale-95 md:scale-95 lg:scale-95 xl:scale-100">
-                                            <ArchitecturalSystemBlueprint />
+                                            {/* === ARCHITECTURAL SYSTEM BLUEPRINT (Directly Under Resting Hand) === */}
+                                            <div className="relative z-10 -ml-38 mt-[335px] pointer-events-auto transform origin-top-left">
+                                                <ArchitecturalSystemBlueprint />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
