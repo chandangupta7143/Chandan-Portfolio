@@ -87,7 +87,7 @@ const projectsData = [
     },
     {
         id: "food-delivery",
-        title: "Smart Food Delivery Platform",
+        title: "IntelliFood - Smart Food Delivery Platform",
         category: "Full Stack & Micro-components",
         type: "java",
         badge: "Full-Stack Platform",
@@ -105,9 +105,11 @@ const projectsData = [
             { name: "Docker", icon: <Package className="w-4 h-4 text-blue-400" /> },
             { name: "WebSockets", icon: <Network className="w-4 h-4 text-cyan-400" /> }
         ],
-        links: { github: "https://github.com/chandangupta7143/food-delivery-backend", demo: "#" },
-        image: "/food-delivery-comingsoon.png",
-        comingSoon: true,
+        links: { 
+            github: "https://github.com/chandangupta7143/IntelliFood-Smart-Food-Delivery-Platform-", 
+            demo: "https://intellifood-smart-food-delivery-platform.onrender.com" 
+        },
+        image: "/intellifood.png",
         accent: "#F59E0B"
     },
     {
