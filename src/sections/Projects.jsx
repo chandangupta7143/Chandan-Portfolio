@@ -107,7 +107,7 @@ const projectsData = [
         ],
         links: { 
             github: "https://github.com/chandangupta7143/IntelliFood-Smart-Food-Delivery-Platform-", 
-            demo: "https://intellifood-smart-food-delivery-platform.onrender.com" 
+            demo: "https://intelli-food-smart-food-delivery-pl.vercel.app/" 
         },
         image: "/intellifood.png",
         accent: "#F59E0B"
