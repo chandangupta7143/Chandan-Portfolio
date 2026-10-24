@@ -52,7 +52,7 @@ const Hero = () => {
                     <Reveal delay={0.3}>
                         <div className="flex flex-wrap items-center gap-4">
                             <a
-                                href="https://drive.google.com/file/d/12Jvg-SjSrxWYmFAMNeK1RY9ao_UBPpGK/view?usp=drive_link"
+                                href="https://drive.google.com/file/d/19CotCZ0BaZkRYDejMVwhoXLgiKkwlmsu/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group relative px-8 py-4 flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-full font-bold uppercase tracking-wider text-xs md:text-sm text-white shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.7)] transition-all duration-300 hover:scale-105 overflow-hidden"
