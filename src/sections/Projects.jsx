@@ -3,8 +3,8 @@ import { Reveal } from '../components/Reveal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     ShieldCheck, Server, Zap, Globe, Code2, Database, Lock, 
-    Brain, Sparkles, Layers, Package, Network, BarChart2, 
-    QrCode, ExternalLink, ArrowUpRight, Search, CheckCircle2 
+    Sparkles, Layers, Package, Network, 
+    QrCode, ExternalLink, ArrowUpRight, Search, CheckCircle2
 } from 'lucide-react';
 
 // Tech SVG Icons
@@ -57,6 +57,21 @@ const Icons = {
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[#646CFF]">
             <path d="M12 2L2 7l10 15L22 7l-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
+    ),
+    Motion: (
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[#E11D48]">
+            <path d="M4 4h16v8l-8 8-8-8z" />
+        </svg>
+    ),
+    Vercel: (
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white">
+            <path d="M12 2L24 22H0L12 2Z" />
+        </svg>
+    ),
+    GitHub: (
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white">
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+        </svg>
     )
 };
 
@@ -68,6 +83,12 @@ const projectsData = [
         type: "java",
         badge: "Featured Enterprise",
         description: "EcoQuest is a gamified environmental education platform built for students and teachers. It empowers students to take real-world civic actions (planting trees, recycling, saving water) and rewards them with XP, leveling up their 'Eco-Warrior' status.",
+        features: [
+            "Gamified real-world civic challenges & XP reward system",
+            "Role-based portals for students and educators",
+            "Spring Security authentication with MySQL 8.0 persistence",
+            "Interactive eco-warrior leveling dashboards"
+        ],
         tech: [
             { name: "React 18", icon: Icons.React },
             { name: "Tailwind CSS", icon: Icons.Tailwind },
@@ -92,6 +113,12 @@ const projectsData = [
         type: "java",
         badge: "Full-Stack Platform",
         description: "Built a production-grade full-stack food delivery platform featuring intelligent restaurant discovery, dynamic pricing, secure order lifecycle management, fraud detection, personalized recommendations, geospatial search, and live delivery tracking.",
+        features: [
+            "Intelligent restaurant discovery & dynamic pricing engine",
+            "Geospatial search with real-time delivery tracking",
+            "Fraud detection algorithms & personalized recommendations",
+            "Dockerized Spring Boot microservices with Redis caching"
+        ],
         tech: [
             { name: "Spring Boot", icon: Icons.Spring },
             { name: "Spring Security", icon: <ShieldCheck className="w-4 h-4 text-rose-400" /> },
@@ -119,6 +146,12 @@ const projectsData = [
         type: "mern",
         badge: "Full Stack MERN",
         description: "A full-stack gamified environmental learning platform where students complete eco-challenges, participate in quizzes, earn XP points, climb leaderboards, and track their real-world environmental impact.",
+        features: [
+            "Interactive environmental challenges & gamified quizzes",
+            "Dynamic XP leaderboards and user achievement badges",
+            "Full-stack MERN architecture with MongoDB persistence",
+            "Containerized deployment with responsive design"
+        ],
         tech: [
             { name: "MongoDB", icon: <Database className="w-4 h-4 text-green-500" /> },
             { name: "Express.js", icon: <Server className="w-4 h-4 text-gray-400" /> },
@@ -139,6 +172,12 @@ const projectsData = [
         type: "java",
         badge: "Fintech Engine",
         description: "Architected a high-performance banking portal using React and Spring Boot. Features secure user onboarding, real-time dashboards, transaction agent simulators, and QR code integration.",
+        features: [
+            "High-performance digital banking portal architecture",
+            "Interactive transaction agent simulator and QR code integration",
+            "Real-time account balance dashboards & transfer workflows",
+            "Enterprise Spring Boot backend with Hibernate/JPA security"
+        ],
         tech: [
             { name: "React", icon: Icons.React },
             { name: "Tailwind", icon: Icons.Tailwind },
@@ -159,16 +198,58 @@ const projectsData = [
         accent: "#6366F1"
     },
     {
+        id: "freshmart",
+        title: "FRESHMART",
+        category: "Frontend Development / E-commerce UI",
+        tagline: "Freshness, Quality & Everyday Convenience.",
+        type: "frontend",
+        badge: "Grocery Storefront",
+        description: "FRESHMART is a modern, responsive grocery storefront homepage designed with a premium and clean user interface. It allows users to explore grocery categories, browse products, search for specific items, and filter products by category. The main focus was creating a smooth shopping-style browsing experience with reusable React components, responsive layouts, and interactive frontend features.",
+        features: [
+            "Premium & responsive grocery storefront homepage design",
+            "Reusable and component-based React architecture",
+            "18 static grocery products across 6 categories",
+            "Interactive product search & category-based filtering",
+            "Combined multi-criteria search and category filter logic",
+            "Responsive mobile navigation with smooth drawer transitions",
+            "Newsletter form with frontend-only validation and feedback",
+            "Smooth Framer Motion transitions and image fallback handling"
+        ],
+        tech: [
+            { name: "React 19", icon: Icons.React },
+            { name: "JavaScript (ES6+)", icon: Icons.JavaScript },
+            { name: "Vite", icon: Icons.Vite },
+            { name: "Tailwind CSS v4", icon: Icons.Tailwind },
+            { name: "Framer Motion", icon: Icons.Motion },
+            { name: "Lucide React", icon: <Sparkles className="w-4 h-4 text-emerald-400" /> },
+            { name: "React Hooks", icon: <Code2 className="w-4 h-4 text-cyan-400" /> },
+            { name: "Git & GitHub", icon: Icons.GitHub },
+            { name: "Vercel", icon: Icons.Vercel }
+        ],
+        links: { 
+            github: "https://github.com/chandangupta7143/FRESHMART", 
+            demo: "https://freshmart-khaki-five.vercel.app" 
+        },
+        image: "/freshmart.png",
+        accent: "#10B981"
+    },
+    {
         id: "portfolio",
         title: "Advanced Portfolio",
         category: "Creative Dev",
         type: "frontend",
         badge: "Interactive Portfolio",
         description: "Engineered a modern, responsive portfolio platform using React (SPA) and Framer Motion for smooth animations. Designed to showcase projects and skills with an elite, SEO-optimized structure.",
+        features: [
+            "Single Page Application with smooth Framer Motion",
+            "Dark cyberpunk aesthetic with interactive spotlight cursor",
+            "Categorized multi-stack project filtering & instant keyword search",
+            "Responsive layouts optimized for all device viewports"
+        ],
         tech: [
             { name: "React", icon: Icons.React },
             { name: "JavaScript", icon: Icons.JavaScript },
-            { name: "Motion", icon: <Zap className="w-4 h-4 text-yellow-400" /> },
+            { name: "Motion", icon: Icons.Motion },
             { name: "Tailwind v4", icon: Icons.Tailwind },
             { name: "Vite", icon: Icons.Vite }
         ],
@@ -194,6 +275,8 @@ const Projects = () => {
         const matchesSearch = searchQuery.trim() === "" || 
             project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (project.tagline && project.tagline.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (project.features && project.features.some(f => f.toLowerCase().includes(searchQuery.toLowerCase()))) ||
             project.tech.some(t => t.name.toLowerCase().includes(searchQuery.toLowerCase()));
         return matchesFilter && matchesSearch;
     });
@@ -212,7 +295,7 @@ const Projects = () => {
                         </div>
 
                         <p className="text-zinc-400 font-light text-base md:text-lg max-w-md leading-relaxed">
-                            A showcase of production-ready full-stack applications, microservices, fintech portals, and gamified platforms.
+                            A showcase of production-ready full-stack applications, microservices, fintech portals, and modern frontend experiences.
                         </p>
                     </div>
                 </Reveal>
@@ -254,142 +337,205 @@ const Projects = () => {
                 {/* Projects Grid */}
                 <div className="space-y-16 md:space-y-24">
                     <AnimatePresence mode="wait">
-                        {filteredProjects.map((project, index) => (
+                        {filteredProjects.length === 0 ? (
                             <motion.div
-                                key={project.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.5, ease: "easeOut" }}
-                                className="group relative w-full"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="text-center py-16 px-4 rounded-3xl bg-zinc-900/30 border border-white/5"
                             >
-                                <div 
-                                    className="relative w-full rounded-3xl bg-zinc-900/40 border border-white/5 group-hover:border-indigo-500/30 p-6 md:p-10 lg:p-12 transition-all duration-500 backdrop-blur-xl overflow-hidden shadow-2xl hover:shadow-[0_0_50px_rgba(99,102,241,0.15)]"
-                                    onMouseMove={(e) => {
-                                        const { currentTarget, clientX, clientY } = e;
-                                        const { left, top } = currentTarget.getBoundingClientRect();
-                                        const x = clientX - left;
-                                        const y = clientY - top;
-                                        currentTarget.style.setProperty("--x", `${x}px`);
-                                        currentTarget.style.setProperty("--y", `${y}px`);
-                                    }}
+                                <Search className="w-10 h-10 text-zinc-600 mx-auto mb-3" />
+                                <h4 className="text-lg font-bold text-white mb-1">No Projects Found</h4>
+                                <p className="text-sm text-zinc-400 mb-4">No projects match "{searchQuery}" with the active filter.</p>
+                                <button
+                                    onClick={() => { setSearchQuery(""); setActiveFilter("all"); }}
+                                    className="px-5 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-500/30 transition-all"
                                 >
-                                    {/* Spotlight Hover Radial */}
-                                    <div
-                                        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                        style={{
-                                            background: `radial-gradient(600px circle at var(--x) var(--y), ${project.accent}15, transparent 60%)`
+                                    Reset Filters
+                                </button>
+                            </motion.div>
+                        ) : (
+                            filteredProjects.map((project) => (
+                                <motion.div
+                                    key={project.id}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    className="group relative w-full"
+                                >
+                                    <div 
+                                        className="relative w-full rounded-3xl bg-zinc-900/40 border border-white/5 group-hover:border-indigo-500/30 p-6 md:p-10 lg:p-12 transition-all duration-500 backdrop-blur-xl overflow-hidden shadow-2xl hover:shadow-[0_0_50px_rgba(99,102,241,0.15)]"
+                                        onMouseMove={(e) => {
+                                            const { currentTarget, clientX, clientY } = e;
+                                            const { left, top } = currentTarget.getBoundingClientRect();
+                                            const x = clientX - left;
+                                            const y = clientY - top;
+                                            currentTarget.style.setProperty("--x", `${x}px`);
+                                            currentTarget.style.setProperty("--y", `${y}px`);
                                         }}
-                                    />
+                                    >
+                                        {/* Spotlight Hover Radial */}
+                                        <div
+                                            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                            style={{
+                                                background: `radial-gradient(600px circle at var(--x) var(--y), ${project.accent}15, transparent 60%)`
+                                            }}
+                                        />
 
-                                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
 
-                                        {/* Left Side: Content & Badges (7 Columns) */}
-                                        <div className="lg:col-span-7 flex flex-col justify-between">
-                                            <div>
-                                                {/* Header Category & Badges */}
-                                                <div className="flex flex-wrap items-center gap-3 mb-6">
-                                                    <span className="text-xs font-mono tracking-widest uppercase text-cyan-400 border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 rounded-full font-bold">
-                                                        {project.category}
-                                                    </span>
-
-                                                    {project.comingSoon && (
-                                                        <span className="flex items-center gap-1.5 text-xs font-mono tracking-widest uppercase text-amber-400 border border-amber-500/30 bg-amber-500/10 px-3 py-1 rounded-full animate-pulse font-semibold">
-                                                            <Sparkles className="w-3 h-3 text-amber-400" />
-                                                            Coming Soon
+                                            {/* Left Side: Content & Badges (7 Columns) */}
+                                            <div className="lg:col-span-7 flex flex-col justify-between">
+                                                <div>
+                                                    {/* Header Category & Badges */}
+                                                    <div className="flex flex-wrap items-center gap-2.5 mb-5">
+                                                        <span className="text-xs font-mono tracking-widest uppercase text-cyan-400 border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 rounded-full font-bold">
+                                                            {project.category}
                                                         </span>
+
+                                                        {project.badge && (
+                                                            <span className="text-xs font-mono tracking-widest uppercase text-indigo-300 border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 rounded-full font-medium">
+                                                                {project.badge}
+                                                            </span>
+                                                        )}
+
+                                                        {project.comingSoon && (
+                                                            <span className="flex items-center gap-1.5 text-xs font-mono tracking-widest uppercase text-amber-400 border border-amber-500/30 bg-amber-500/10 px-3 py-1 rounded-full animate-pulse font-semibold">
+                                                                <Sparkles className="w-3 h-3 text-amber-400" />
+                                                                Coming Soon
+                                                            </span>
+                                                        )}
+                                                    </div>
+
+                                                    {/* Title */}
+                                                    <h3 className="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-cyan-300 transition-all duration-300">
+                                                        {project.title}
+                                                    </h3>
+
+                                                    {/* Tagline */}
+                                                    {project.tagline && (
+                                                        <p className="text-xs md:text-sm font-medium text-emerald-400/90 font-mono tracking-wide italic mb-4 flex items-center gap-2">
+                                                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                                            "{project.tagline}"
+                                                        </p>
+                                                    )}
+
+                                                    {/* Description */}
+                                                    <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 font-light max-w-2xl">
+                                                        {project.description}
+                                                    </p>
+
+                                                    {/* Key Features & Architecture Highlights */}
+                                                    {project.features && project.features.length > 0 && (
+                                                        <div className="mb-6 p-4 rounded-2xl bg-zinc-950/50 border border-white/5">
+                                                            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-zinc-400 mb-3">
+                                                                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                                                                <span>Key Highlights &amp; Features</span>
+                                                            </div>
+                                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                                                {project.features.map((feat, idx) => (
+                                                                    <div key={idx} className="flex items-start gap-2 text-xs md:text-sm text-zinc-300 font-light">
+                                                                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                                                        <span className="leading-snug">{feat}</span>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
                                                     )}
                                                 </div>
 
-                                                {/* Title */}
-                                                <h3 className="text-3xl md:text-5xl font-bold text-white mb-5 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-cyan-300 transition-all duration-300">
-                                                    {project.title}
-                                                </h3>
+                                                {/* Tech Stack Pills */}
+                                                <div className="flex flex-wrap gap-2.5 mb-8">
+                                                    {project.tech.map((t, i) => (
+                                                        <span 
+                                                            key={i} 
+                                                            className="flex items-center gap-2 px-3.5 py-1.5 bg-zinc-950/80 border border-white/5 rounded-xl text-xs md:text-sm text-zinc-300 font-mono hover:border-cyan-500/40 hover:text-white transition-all duration-300 shadow-sm"
+                                                        >
+                                                            {t.icon}
+                                                            <span>{t.name}</span>
+                                                        </span>
+                                                    ))}
+                                                </div>
 
-                                                {/* Description */}
-                                                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 font-light max-w-2xl">
-                                                    {project.description}
-                                                </p>
+                                                {/* Action Links */}
+                                                <div className="flex flex-wrap gap-4 pt-2">
+                                                    {project.links.demo && (
+                                                        <a
+                                                            href={project.links.demo}
+                                                            target={project.links.demo === '#' ? '' : "_blank"}
+                                                            rel={project.links.demo === '#' ? '' : "noopener noreferrer"}
+                                                            onClick={(e) => project.links.demo === '#' && e.preventDefault()}
+                                                            className={`group/btn relative px-6 py-3 rounded-xl flex items-center gap-2.5 text-sm font-bold tracking-wider uppercase transition-all duration-300 ${
+                                                                project.links.demo === '#' 
+                                                                    ? 'bg-zinc-900/60 text-zinc-600 border border-white/5 cursor-not-allowed' 
+                                                                    : 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] hover:scale-105'
+                                                            }`}
+                                                        >
+                                                            <span>Live Demo</span>
+                                                            <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                                                        </a>
+                                                    )}
+
+                                                    {project.links.github && (
+                                                        <a
+                                                            href={project.links.github}
+                                                            target={project.links.github === '#' ? '' : "_blank"}
+                                                            rel={project.links.github === '#' ? '' : "noopener noreferrer"}
+                                                            onClick={(e) => project.links.github === '#' && e.preventDefault()}
+                                                            className={`group/btn relative px-6 py-3 rounded-xl flex items-center gap-2.5 text-sm font-bold tracking-wider uppercase transition-all duration-300 ${
+                                                                project.links.github === '#' 
+                                                                    ? 'bg-zinc-900/60 text-zinc-600 border border-white/5 cursor-not-allowed' 
+                                                                    : 'bg-zinc-950 border border-white/10 text-zinc-200 hover:text-white hover:border-cyan-500/40 hover:bg-zinc-900 shadow-md'
+                                                            }`}
+                                                        >
+                                                            <span>Source Code</span>
+                                                            <Code2 className="w-4 h-4 text-cyan-400 transition-transform group-hover/btn:rotate-12" />
+                                                        </a>
+                                                    )}
+                                                </div>
                                             </div>
 
-                                            {/* Tech Stack Pills */}
-                                            <div className="flex flex-wrap gap-2.5 mb-8">
-                                                {project.tech.map((t, i) => (
-                                                    <span 
-                                                        key={i} 
-                                                        className="flex items-center gap-2 px-3.5 py-1.5 bg-zinc-950/80 border border-white/5 rounded-xl text-xs md:text-sm text-zinc-300 font-mono hover:border-cyan-500/40 hover:text-white transition-all duration-300 shadow-sm"
-                                                    >
-                                                        {t.icon}
-                                                        <span>{t.name}</span>
-                                                    </span>
-                                                ))}
-                                            </div>
-
-                                            {/* Action Links */}
-                                            <div className="flex flex-wrap gap-4 pt-2">
-                                                {project.links.demo && (
+                                            {/* Right Side: Screenshot Card Showcase (5 Columns) */}
+                                            <div className="lg:col-span-5 relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-cyan-500/40 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
+                                                {project.comingSoon ? (
+                                                    /* Coming Soon Screenshot Placeholder */
+                                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-amber-950/30 via-zinc-950 to-indigo-950/30">
+                                                        <div className="relative mb-3">
+                                                            <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse" />
+                                                            <Sparkles className="relative w-12 h-12 text-amber-400" />
+                                                        </div>
+                                                        <h4 className="text-white font-bold text-base tracking-wide">Screenshots &amp; Demo</h4>
+                                                        <p className="text-amber-400/80 font-mono text-xs tracking-wider mt-1">In Final QA Review • Coming Soon</p>
+                                                    </div>
+                                                ) : (
+                                                    /* Project Image with Interactive Link */
                                                     <a
-                                                        href={project.links.demo}
-                                                        target={project.links.demo === '#' ? '' : "_blank"}
-                                                        rel={project.links.demo === '#' ? '' : "noopener noreferrer"}
-                                                        onClick={(e) => project.links.demo === '#' && e.preventDefault()}
-                                                        className={`group/btn relative px-6 py-3 rounded-xl flex items-center gap-2.5 text-sm font-bold tracking-wider uppercase transition-all duration-300 ${
-                                                            project.links.demo === '#' 
-                                                                ? 'bg-zinc-900/60 text-zinc-600 border border-white/5 cursor-not-allowed' 
-                                                                : 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] hover:scale-105'
-                                                        }`}
+                                                        href={project.links.demo !== '#' ? project.links.demo : project.links.github}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="relative block w-full h-full overflow-hidden group/img cursor-pointer"
                                                     >
-                                                        <span>Live Demo</span>
-                                                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                                                        <img
+                                                            src={project.image}
+                                                            alt={project.title}
+                                                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-105"
+                                                        />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                                                            <span className="text-xs font-mono font-semibold text-white flex items-center gap-1.5 bg-zinc-900/90 border border-white/10 px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md">
+                                                                <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
+                                                                Explore Project
+                                                            </span>
+                                                        </div>
                                                     </a>
                                                 )}
-
-                                                <a
-                                                    href={project.links.github}
-                                                    target={project.links.github === '#' ? '' : "_blank"}
-                                                    rel={project.links.github === '#' ? '' : "noopener noreferrer"}
-                                                    onClick={(e) => project.links.github === '#' && e.preventDefault()}
-                                                    className={`group/btn relative px-6 py-3 rounded-xl flex items-center gap-2.5 text-sm font-bold tracking-wider uppercase transition-all duration-300 ${
-                                                        project.links.github === '#' 
-                                                            ? 'bg-zinc-900/60 text-zinc-600 border border-white/5 cursor-not-allowed' 
-                                                            : 'bg-zinc-950 border border-white/10 text-zinc-200 hover:text-white hover:border-cyan-500/40 hover:bg-zinc-900 shadow-md'
-                                                    }`}
-                                                >
-                                                    <span>Source Code</span>
-                                                    <Code2 className="w-4 h-4 text-cyan-400 transition-transform group-hover/btn:rotate-12" />
-                                                </a>
                                             </div>
-                                        </div>
 
-                                        {/* Right Side: Screenshot Card Showcase (5 Columns) */}
-                                        <div className="lg:col-span-5 relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-cyan-500/40 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
-                                            {project.comingSoon ? (
-                                                /* Coming Soon Screenshot Placeholder */
-                                                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-amber-950/30 via-zinc-950 to-indigo-950/30">
-                                                    <div className="relative mb-3">
-                                                        <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse" />
-                                                        <Sparkles className="relative w-12 h-12 text-amber-400" />
-                                                    </div>
-                                                    <h4 className="text-white font-bold text-base tracking-wide">Screenshots &amp; Demo</h4>
-                                                    <p className="text-amber-400/80 font-mono text-xs tracking-wider mt-1">In Final QA Review • Coming Soon</p>
-                                                </div>
-                                            ) : (
-                                                /* Project Image */
-                                                <div className="relative w-full h-full overflow-hidden group/img">
-                                                    <img
-                                                        src={project.image}
-                                                        alt={project.title}
-                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
-                                                    />
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500" />
-                                                </div>
-                                            )}
                                         </div>
-
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))
+                        )}
                     </AnimatePresence>
                 </div>
 
